@@ -1,0 +1,17 @@
+零跑汽车专家原型 v0.1.0｜构建与结构检查记录
+日期：2026-11-06
+
+已生成 ZIP：
+- leapmotor-car-expert.zip — SHA256 e44c9fb33e850734c491b8bfd5b3c109edf247659c411a0ab9a10831ec690744
+- leapmotor-car-expert-workbuddy-skill.zip — SHA256 8ee348eaf058479b855a09b535bd486e4823b7e697c600bb11b156c77b84954f
+- leapmotor-car-expert-workbuddy.zip — SHA256 bd58b89c4aa175db9c7dcc511431a1f025a0a34332bd371540822e4622c25042
+
+结果：三种目标包分别按 standard、workbuddy、expert 结构构建；生成时读取 ZIP 回查通过，随后对各 ZIP 再运行结构校验，均显示 static_validation=passed。
+
+WorkBuddy 专家包结构包含 plugin.json、Agent 定义、头像和嵌入技能；头像为 512×512 PNG，文件 12,610 bytes。WorkBuddy 专家显示名字段校验通过。
+
+未验证：未在 WorkBuddy 实际客户端安装、召唤或提交市场审核；未在其他第三方 Agent 客户端安装调用；没有声称其运行效果、回答准确率或市场发布成功。
+
+资料范围：C10、C11、C16 的公开网页资料快照，核对截至 2026-11-06。车型价格、版本和配置会变化；应在使用时核对当前官方配置表。C11 阅读入口现采用用户确认可在中国访问的 .com 页面，中国区数值交叉核对仍使用 .cn 动态参数页。网页读取工具未能复现用户环境中的页面显示，地区／出口／渲染差异尚未独立确认。资料索引见 source/leapmotor-car-expert/references/sources.json。
+
+公开发布者字段已更新为 GitHub 账号 EnderZhou 与其 ID 关联的 GitHub noreply 邮箱；本地私密邮箱未写入仓库。第三方资料使用边界见 THIRD_PARTY_NOTICES.md。

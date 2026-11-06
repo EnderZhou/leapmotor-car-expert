@@ -1,0 +1,21 @@
+{
+  "research_checked": "2026-11-06",
+  "notice": "公开网页来源索引。页面内容可能变化；引用前应核对具体版本与读取日期。",
+  "sources": [
+    {"id":"official-home","publisher":"零跑汽车","type":"official-index","url":"https://www.leapmotor.cn/","retrieved":"2026-11-06","supports":"中国官网车型导航入口；未以首页内容单独证明车型配置"},
+    {"id":"official-c11-params","publisher":"零跑汽车","type":"official-configuration-dynamic-page","url":"https://leapmotor.cn/parameter-pk-web.html?carTypeId=3&platform=web","retrieved":"2026-11-06","direct_read_status":"网页读取器未返回正文；搜索索引能检索到参数文本。按动态页面处理，不能保证直达显示","supports":"C11 640纯电版本参数候选值；需从官方C11车型页进入参数／配置或以官方配置单复核"},
+    {"id":"official-c11-page-cn","publisher":"零跑汽车中国站","type":"official-product-page","url":"https://www.leapmotor.cn/C11.html","retrieved":"2026-11-06","direct_read_status":"网页读取器未返回正文","supports":"中国站C11官方产品页入口；逐项功能需回查配置表"},
+    {"id":"official-c11-page-com","publisher":"Leapmotor官方站点","type":"official-product-page-user-confirmed","url":"https://www.leapmotor.com/C11.html","retrieved":"2026-11-06","direct_read_status":"本次网页读取器无法独立读取该路径；用户报告中国境内浏览器可访问。可能存在地区／出口／动态渲染差异","supports":"中国用户阅读入口；用于提供可访问官方页面链接，不单独作为本原型配置数值证据"},
+    {"id":"official-c16-page","publisher":"零跑汽车","type":"official-product-page","url":"https://www.leapmotor.cn/C16-polymerization.html","retrieved":"2026-11-06","supports":"C16官方产品聚合页；注明若干配置非全系标配，部分功能仅限激光雷达车型或待OTA"},
+    {"id":"dcd-c10-2026-review","publisher":"懂车帝","type":"owner-review","url":"https://www.dongchedi.com/auto/series/score/9307-x-x-x-x-x","retrieved":"2026-11-06","supports":"C10旧年款个体车主体验；只用于问题线索，不代表2027款或总体口碑"},
+    {"id":"dcd-c10-2026-params","publisher":"懂车帝","type":"configuration-index","url":"https://www.dongchedi.com/auto/params-carIds-x-9307","retrieved":"2026-11-06","supports":"C10旧年款车型参数目录；需按年份隔离"},
+    {"id":"dcd-c11-params","publisher":"懂车帝","type":"configuration-index","url":"https://www.dongchedi.com/auto/params-carIds-x-4731","retrieved":"2026-11-06","supports":"历史C11配置车型目录；与官方当前640纯电配置分开"},
+    {"id":"autohome-c10-2027","publisher":"汽车之家","type":"configuration-index","url":"https://www.autohome.com.cn/7382/price.html","retrieved":"2026-11-06","supports":"C10车型年款／车型目录；最新具体配置查当前配置表"},
+    {"id":"autohome-c10-guide-2027","publisher":"汽车之家·购车手册","type":"editorial-recommendation","url":"https://www.autohome.com.cn/article?id=_SeOIKwwWEM%3D","published":"2026-06-18","retrieved":"2026-11-06","supports":"C10 2027款购车建议、智享版与激光雷达版比较、零压套装选装说明；优惠内容已过时"},
+    {"id":"pcauto-c10-config-2027","publisher":"太平洋汽车","type":"configuration-database","url":"https://price.pcauto.com.cn/s50891/config.html","retrieved":"2026-11-06","supports":"C10 2027款四配置、指导价、CLTC续航及部分参数；需官方交叉核验"},
+    {"id":"autohome-c11-config","publisher":"汽车之家","type":"configuration-index","url":"https://car.autohome.com.cn/config/series/5205-24063.html","retrieved":"2026-11-06","supports":"C11车型配置目录入口；返回为空时不作车型不存在结论"},
+    {"id":"autohome-c16-2027","publisher":"汽车之家","type":"configuration-index","url":"https://www.autohome.com.cn/7674/24057/price.html","retrieved":"2026-11-06","supports":"C16 2027款8款配置名称、座位数与页面指导价"},
+    {"id":"autohome-c16-2027-news","publisher":"汽车之家·原创车闻","type":"launch-report","url":"https://www.autohome.com.cn/news/202606/1315105.html","published":"2026-06-16","retrieved":"2026-11-06","supports":"2027款C16发布报道、改款信息与动力配置概览"},
+    {"id":"autohome-c16-2026","publisher":"汽车之家","type":"configuration-index","url":"https://www.autohome.com.cn/7674/22499/price.html","retrieved":"2026-11-06","supports":"C16历史2026款车型目录；与2027款隔离"}
+  ]
+}

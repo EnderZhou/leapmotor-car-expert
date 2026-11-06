@@ -1,0 +1,8 @@
+{
+  "display_name": "零跑汽车专家 Skill",
+  "display_name_en": "Leapmotor Expert Skill",
+  "description_zh": "查询零跑车型与配置，比较版本差异，解读公开功能信息，按预算和补能条件整理选车候选并附来源。基于公开信息，非官方服务。",
+  "description_en": "Look up Leapmotor models and trims, compare versions, explain public feature information, and shortlist options by budget and charging needs with cited sources. Unofficial public information assistant.",
+  "version": "0.1.0",
+  "author": "EnderZhou"
+}
