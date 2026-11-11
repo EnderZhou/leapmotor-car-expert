@@ -13,3 +13,7 @@ bb055313663e03f6aae10a9061f8c2d98c2e67afad9ceb2c3b2e37a8b41e436a  packages/v0.2.
 b4c2d2b6d58f12b1ff656482a5a8b369ee84f83e49a5c373f7d5e627b0c06b72  packages/v0.3.0/leapmotor-car-expert.zip
 d9cb42ed92e1df4da6c603a6fff9e41a61e620b79101a45695e4621f2fe81d1c  packages/v0.3.0/leapmotor-car-expert-workbuddy-skill.zip
 65eb688c66d78e89eeb3e12a0ef0c2fb95d2b59c009195beb850b8b0605eb969  packages/v0.3.0/leapmotor-car-expert-workbuddy.zip
+# v0.4.0 — 2026-11-11
+f8fea3cf8712f833063945a73e3253bb4703091b721e7e888503384824ba90b4  packages/v0.4.0/leapmotor-car-expert.zip
+51296270a37b180ab00eb356b938ce0bf7e4f6f92cb7f8eeae4b8a1456448b14  packages/v0.4.0/leapmotor-car-expert-workbuddy-skill.zip
+22696c4ea66e947dfd0f18738a952de9bd4bd3066f0b560b2e484ca8a034b901  packages/v0.4.0/leapmotor-car-expert-workbuddy.zip

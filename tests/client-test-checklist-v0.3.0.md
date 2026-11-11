@@ -1,5 +1,10 @@
 # WorkBuddy 客户端实测清单｜16 题
 
+> **本文件已作废，仅作历史对照。** v0.4.0 起：
+> - 分数与判定撤回，原因见 `../docs/勘误记录-v0.4.0.md`；
+> - 现行记录见 `offline-regression-v0.4.0.md`、`independent-review-worksheet-v0.4.0.md`、`client-test-checklist-v0.4.0.md`。
+> 下文保留原文以便对照，其中 Q16／Q17／Q22／Q43／Q47／Q50／Q57 与 F3／F4 的预期是错的，不要引用。
+
 **状态：未执行。** 本文件是待执行清单，不是测试结果。需要用真实 WorkBuddy 客户端完成。
 
 ## 执行前记录

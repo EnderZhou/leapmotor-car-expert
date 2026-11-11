@@ -1,5 +1,10 @@
 # 离线回归执行记录｜v0.3.0
 
+> **本文件已作废，仅作历史对照。** v0.4.0 起：
+> - 分数与判定撤回，原因见 `../docs/勘误记录-v0.4.0.md`；
+> - 现行记录见 `offline-regression-v0.4.0.md`、`independent-review-worksheet-v0.4.0.md`、`client-test-checklist-v0.4.0.md`。
+> 下文保留原文以便对照，其中 Q16／Q17／Q22／Q43／Q47／Q50／Q57 与 F3／F4 的预期是错的，不要引用。
+
 **执行日期：** 2026-11-11
 **被测对象：** `source/leapmotor-car-expert` v0.3.0（SKILL + 8 个 references）
 **执行方式：** 构建者按 SKILL.md 工作流程、仅依据包内 references 逐题作答，再按 `test-cases.md` 判定规则评分。每题独立作答。

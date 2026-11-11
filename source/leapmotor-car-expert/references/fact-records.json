@@ -1,0 +1,3879 @@
+{
+  "version": "0.4.0",
+  "checked": "2026-11-11",
+  "status_legend": {
+    "confirmed": "有来源明确写出该版本",
+    "media": "媒体口径，无官方逐款配置表佐证",
+    "unknown": "没有针对该版本的信息，不等于没有",
+    "conflict": "来源互相矛盾，未决",
+    "L1": "价格：官方页可复现且配置库一致",
+    "L1*": "价格：官方页读到过但复核未重现，另有配置库支持"
+  },
+  "notice": "本文件是事实记录的唯一数据源；trim-comparison.md 的数值由此派生。改动请先改这里并运行 check。",
+  "records": [
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 12.58,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 290,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "wltc_pure_range",
+      "value": 190,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 38.7,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4749×1900×1680",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "zjchewang-c10-discount"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "3.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 1995,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 7.38,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "无",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "yiche-c10-review",
+        "sina-c10-advisor"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 13.58,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 290,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "wltc_pure_range",
+      "value": 190,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 38.7,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4749×1900×1680",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "zjchewang-c10-discount"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "3.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 1995,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 7.38,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有，型号未确认",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通 8650",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-290-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "290 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "28 个",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 13.28,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 660,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4749×1900×1680",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "zjchewang-c10-discount"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "230 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2040,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.02,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "无",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "yiche-c10-review",
+        "sina-c10-advisor"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-zx",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 14.28,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 660,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4749×1900×1680",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "zjchewang-c10-discount"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "230 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2040,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.02,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c10-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有，型号未确认",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通 8650",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c10-660-lidar",
+      "series": "C10",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "660 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "28 个",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c10-page"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 14.38,
+      "unit": "万元",
+      "status": "L1*",
+      "source_ids": [
+        "official-c11-page-cn",
+        "yiche-c11-config-2027"
+      ],
+      "note": "价格级别 L1*"
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 300,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 41.7,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4780×1905×1658",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2930,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／320 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 18 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "4.0 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2090,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 7.6,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有，型号未确认",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 15.38,
+      "unit": "万元",
+      "status": "L1*",
+      "source_ids": [
+        "official-c11-page-cn",
+        "yiche-c11-config-2027"
+      ],
+      "note": "价格级别 L1*"
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 300,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 41.7,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4780×1905×1658",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2930,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／320 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 18 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "4.0 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2090,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 7.6,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有，型号未确认",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c11-300-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "300 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 14.38,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 640,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4780×1905×1658",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2930,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "220 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2110,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.1,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "无",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "autohome-c11-guide-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zx",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 智享版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 14.98,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 640,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4780×1905×1658",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2930,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "220 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2110,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.1,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "禾赛 AT128，128 线，1 颗",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通骁龙 8650",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-lidar",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "毫米波 3／摄像头 11／超声波 12",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 15.98,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 640,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4780×1905×1658",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2930,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "official-c11-page-cn"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "220 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2110,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.1,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "禾赛 AT128，128 线，1 颗",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通骁龙 8650",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c11-640-zun",
+      "series": "C11",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "640 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "毫米波 3／摄像头 11／超声波 12",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c11-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 14.58,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 280,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "wltc_pure_range",
+      "value": 185,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 38.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "3.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2120,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 8.3,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "无",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 14.88,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 280,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "wltc_pure_range",
+      "value": 185,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 38.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 6,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "3.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2120,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 8.3,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "无",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 15.98,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 280,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wltc_pure_range",
+      "value": 185,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 38.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "3.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2120,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 8.3,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通 8650",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 16.28,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 280,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wltc_pure_range",
+      "value": 185,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 38.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 6,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "200 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "3.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2120,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 8.3,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通 8650",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-280-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "280 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 15.28,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 630,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "230 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2160,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.8,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "无",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 15.58,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 630,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 6,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "230 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2160,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.8,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "无",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-zx-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 尊享版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 16.68,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 630,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 5,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "230 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2160,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.8,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通 8650",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-5",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "guidance_price",
+      "value": 16.98,
+      "unit": "万元",
+      "status": "L1",
+      "source_ids": [
+        "official-c16-page-cn"
+      ],
+      "note": "价格级别 L1"
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "cltc_pure_range",
+      "value": 630,
+      "unit": "km",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "battery_capacity",
+      "value": 81.9,
+      "unit": "kWh",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "seats",
+      "value": 6,
+      "unit": "个",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "dimensions",
+      "value": "4925×1905×1770",
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "wheelbase",
+      "value": 2825,
+      "unit": "mm",
+      "status": "confirmed",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "motor_power_torque",
+      "value": "230 kW／360 N·m",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "fast_charge_30_80",
+      "value": "约 16 分钟",
+      "unit": "-",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "slow_charge",
+      "value": "7.5 h",
+      "unit": "h",
+      "status": "confirmed",
+      "source_ids": [
+        "yiche-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "curb_weight",
+      "value": 2160,
+      "unit": "kg",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "accel_0_100",
+      "value": 6.8,
+      "unit": "s",
+      "status": "confirmed",
+      "source_ids": [
+        "autohome-c16-config-2027"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_lidar",
+      "value": "有",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_chip",
+      "value": "高通 8650",
+      "unit": "-",
+      "status": "media",
+      "source_ids": [
+        "weixin-c16-guide"
+      ],
+      "note": ""
+    },
+    {
+      "trim": "c16-630-lidar-6",
+      "series": "C16",
+      "year": 2027,
+      "market": "CN",
+      "trim_name": "630 激光雷达智尊版",
+      "checked": "2026-11-11",
+      "field": "adas_sensor_count",
+      "value": "未确认",
+      "unit": "-",
+      "status": "unknown",
+      "source_ids": [],
+      "note": ""
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "name": "leapmotor-car-expert-workbuddy",
-  "version": "0.3.0",
-  "description": "Answers questions about Leapmotor models, trims, public features, and purchase comparisons using dated, traceable public sources.",
+  "version": "0.4.0",
+  "description": "Answers Leapmotor questions on models, trims, version differences and buying costs using dated, traceable public sources, including on-road cost with purchase tax and budget-constrained shortlists.",
   "author": {
     "name": "EnderZhou",
     "email": "8674537+EnderZhou@users.noreply.github.com"
@@ -15,8 +15,8 @@
     "en": "Vehicle Guide"
   },
   "displayDescription": {
-    "zh": "查零跑车型与配置，比较年款版本差异，解读公开功能，按预算和补能条件整理选车建议并附来源。",
-    "en": "Research Leapmotor models and trims, explain version differences, and compare options by budget and charging needs with traceable public sources."
+    "zh": "查零跑车型与配置，比较年款版本差异，按预算和补能条件整理候选，估算含购置税的落地成本并附来源。",
+    "en": "Research Leapmotor trims, compare versions, shortlist by budget and charging needs, and estimate on-road cost with traceable sources."
   },
   "categoryId": "12-IndustryConsultant",
   "license": "MIT",

@@ -1,0 +1,32 @@
+{
+  "name": "leapmotor-car-expert-workbuddy",
+  "version": "0.4.0",
+  "display_name_characters": {
+    "zh": 6,
+    "en": 15
+  },
+  "embedded_skills": [
+    {
+      "name": "leapmotor-car-expert",
+      "version": "0.4.0"
+    }
+  ],
+  "profile": "expert",
+  "files": 25,
+  "entry": ".codebuddy-plugin/plugin.json",
+  "static_validation": "passed",
+  "runtime_test": "not_run",
+  "target_import": "not_verified",
+  "target_invocation": "not_verified",
+  "marketplace_publication": "not_submitted",
+  "limits": [
+    "Inline Markdown links only",
+    "No dynamic-path or runtime execution check",
+    "Secret pattern scan is not a comprehensive audit",
+    "Target platform acceptance not proven"
+  ],
+  "sha256": "22696c4ea66e947dfd0f18738a952de9bd4bd3066f0b560b2e484ca8a034b901",
+  "bytes": 90974,
+  "zip": "leapmotor-car-expert-workbuddy.zip",
+  "zip_readback": "passed"
+}

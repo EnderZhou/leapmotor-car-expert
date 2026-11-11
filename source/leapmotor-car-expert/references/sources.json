@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "research_checked": "2026-11-11",
   "notice": "公开网页来源索引。页面内容、价格与配置会变化；引用前应核对具体版本与读取日期。read_status 记录本次实际读取到哪一层内容，未读到正文的来源不得当作已核实事实。",
   "read_status_legend": {
@@ -174,13 +174,13 @@
     },
     {
       "id": "weixin-c16-guide",
-      "publisher": "汽车类公众号·购车手册",
-      "type": "editorial-recommendation",
+      "publisher": "微信公众号文章（转载，原始出处未确认）",
+      "type": "media-trim-analysis",
       "url": "http://mp.weixin.qq.com/s?__biz=MzA4NTM1NzIzNw==&mid=2649497268&idx=1&sn=1fbe3625e3cc926ecaf6bd91e15adde2",
       "retrieved": "2026-11-11",
       "read_status": "partial",
       "supports": "C16 2027款差价结构（同配置纯电比增程贵7000元、6座比5座贵3000元、激光雷达智尊版比尊享版贵1.4万元）；上市权益与两个选装包内容（悦境零压尊享套装、全配套装各10000元）；纯电81.9kWh／800V、增程38.9kWh；轴距2825mm",
-      "limits": "权益为2026年6-7月限时政策，已过期；属媒体整理，不作为当前优惠依据"
+      "limits": "页面带汽车之家版式素材，但发布主体为公众号，原始刊发方未核实；不得记为“汽车之家购车手册”。C16 差价结构与部分选装包内容仅此一源，属媒体口径。"
     },
     {
       "id": "youjia-c16-conflict-sample",
@@ -286,12 +286,12 @@
     {
       "id": "yiche-c11-config-2027",
       "publisher": "易车",
-      "type": "configuration-database",
+      "type": "configuration-database-indirect",
       "url": "https://car.m.yiche.com/",
       "retrieved": "2026-11-11",
       "read_status": "partial",
       "supports": "C11 2027款五版本完整参数表：增程 41.7 kWh、纯电 81.9 kWh、增程快充 0.3 小时（18 分钟）／慢充 4 小时、增程 200 kW／320 N·m、纯电 220 kW／360 N·m、增程后备箱 485-1151 L、纯电 537-1203 L、增程油箱 47 L、整备 2090／2110 kg、前双叉臂后五连杆、CLTC 纯电 300／640 km",
-      "limits": "经搜索索引渲染读取；未确认车系专属可直达路径（移动站为通用入口），引用时须说明检索方式"
+      "limits": "URL 仅能定位到易车移动站通用入口，未能取得 C11 车款级可直达路径与车款 ID；该条目承载的 C11 电池、功率、补能数值属间接证据，不得称为已完成可直达复核。补齐车款链接前，引用时须注明检索方式；关键数值优先以官方或第二配置库交叉。"
     },
     {
       "id": "yoojia-c10-trim-diff",
@@ -372,6 +372,28 @@
       "read_status": "partial",
       "supports": "C11 2027 五版本层级英文描述：增程 300 CLTC、综合 1220 km、200 kW；纯电 640；激光雷达版配 21 扬声器杜比；智尊版加 Nappa、前后排通风加热按摩、后排小桌板",
       "limits": "第三方销售站点，非官方；扬声器数量与官方页 23 扬冲突，仅作交叉参考"
+    },
+    {
+      "id": "cn-tax-2023-no10",
+      "publisher": "财政部、税务总局、工业和信息化部",
+      "type": "official-policy",
+      "url": "https://szs.mof.gov.cn/zhengcefabu/202306/t20230620_3891500.htm",
+      "published": "2023-06-19",
+      "retrieved": "2026-11-11",
+      "read_status": "full-text",
+      "supports": "新能源汽车车辆购置税减免：2024-01-01 至 2025-12-31 免征（每辆乘用车免税额≤3万元）；2026-01-01 至 2027-12-31 减半征收（每辆乘用车减税额≤1.5万元）；购置日期按机动车销售统一发票等凭证开具日期确定；须列入《减免车辆购置税的新能源汽车车型目录》；插电式混合动力（含增程式）属新能源汽车",
+      "limits": "政策原文；具体车型是否在当期目录内、发票不含税价与地方执行细节需另行核对"
+    },
+    {
+      "id": "cn-tax-shanghai-qa-2026",
+      "publisher": "国家税务总局上海市税务局",
+      "type": "official-policy-qa",
+      "url": "https://shanghai.chinatax.gov.cn/bsfw/nszx/hdfk/202602/t479413.html",
+      "published": "2026-02",
+      "retrieved": "2026-11-11",
+      "read_status": "full-text",
+      "supports": "2026 年购置税计算口径的官方答复，重申减半与 1.5 万元上限，并援引工信部等三部门 2025 年第 24 号公告：2026-01-01 起列入《减免税目录》的车型需符合新技术要求，不符合者将从目录撤销",
+      "limits": "地方税务机关答复，全国口径以三部门公告为准；答疑未涉及具体车型资格"
     }
   ]
 }

@@ -1,0 +1,52 @@
+零跑汽车专家 v0.4.0｜构建与结构检查记录
+日期：2026-11-11
+
+## 已生成 ZIP（位于 packages/v0.4.0/）
+
+- leapmotor-car-expert.zip — 68,951 bytes — SHA256 f8fea3cf8712f833063945a73e3253bb4703091b721e7e888503384824ba90b4
+- leapmotor-car-expert-workbuddy-skill.zip — 69,247 bytes — SHA256 51296270a37b180ab00eb356b938ce0bf7e4f6f92cb7f8eeae4b8a1456448b14
+- leapmotor-car-expert-workbuddy.zip — 90,974 bytes — SHA256 22696c4ea66e947dfd0f18738a952de9bd4bd3066f0b560b2e484ca8a034b901
+
+构建顺序：先按源码构建三包；随后发现包内 `README.md`（技能级，非仓库根 README）仍为 0.3.0 标题且来源数写作 36，修正后以 `--force` 重建；再审阅时发现 `references/model-c11.md` 仍把页面差异断定为“标签页动态渲染”，且把纯电版的激光雷达型号与感知数量写成两版通用，修正后第三次以 `--force` 重建。上列哈希为**最终产物**（三次构建，只保留最后一次的产物）。
+
+## 检查结果
+
+| 阶段 | 结果 |
+|---|---|
+| 源码结构检查（profile=standard） | static_validation=passed，21 文件，入口 SKILL.md |
+| ZIP 回查（生成时读取产物再校验） | 三包 zip_readback=passed |
+| 独立复检（对成品 ZIP 再跑 check） | standard 21 文件／workbuddy 21 文件／expert 25 文件，均 static_validation=passed，version 均为 0.4.0 |
+| 内嵌文件一致性 | standard 21/21、expert（skills/ 下）21/21 与源码逐字节一致 |
+| workbuddy 技能包 SKILL.md 差异 | 预期内：构建器注入 display_name／description_zh／description_en／author 并规范化 version；正文未改 |
+| 包内文件清点 | 技能包 17 个 references（含新增 buyer-intake／charging-and-range／family-test-drive／ownership-and-order／purchase-cost／fact-records.json）；专家包含 plugin.json、agent、头像、嵌入技能 |
+| 可疑条目扫描 | 无 `.workbuddy`、无嵌套 ZIP、无 `__MACOSX`、无 `.tmp` |
+| 包内 README 版本 | 已核对为 0.4.0 |
+| SHA256 一致性 | 与 SHA256SUMS.txt v0.4.0 段一致；`sha256sum -c` 12 个包全 OK，无格式告警 |
+| 历史包完整性 | v0.1.0 三包、v0.2.0 三包、v0.3.0 三包共 9 个哈希未变，未覆盖 |
+| 事实记录校验 | `python scripts/facts.py check` → PASS（244 条记录、17 个版本、矩阵为最新生成结果） |
+
+专家显示名：中文 6 字符（零跑汽车专家）、英文 15 字符（Leapmotor Guide）。
+
+## 未验证（不得表述为已通过）
+
+- 未在 WorkBuddy 客户端导入技能包或专家包，未召唤专家。
+- 未执行客户端实测：8 功能 + 8 安全 + 3 多轮 + 2 检索内容注入（清单见 `tests/client-test-checklist-v0.4.0.md`）。
+- 25 个关键事实的非开发者独立复核未执行（表格见 `tests/independent-review-worksheet-v0.4.0.md`）。
+- 未提交市场审核，未推送 Git，未创建 tag，未发布 GitHub Release。
+- 头像仅按 PNG 尺寸与体积检查，未做人工视觉复核。
+
+## 资料状态
+
+17 个版本，核对截至 2026-11-11。价格来源分级：L1 15 个、L1\* 2 个（C11 增程）。来源 38 条，事实记录 244 条。
+
+本版新增：`buyer-intake.md`、`purchase-cost.md`、`charging-and-range.md`、`family-test-drive.md`、`ownership-and-order.md`、`fact-records.json`；`trim-comparison.md` 改为由事实记录生成。
+
+本版重写：`adas-matrix.md`（严格三态）、`trim-deltas.md`（四类归属，AR-HUD 移入争议项）、`answer-patterns.md`、`model-index.md`、`glossary.md`、`docs/evidence/2026-11-11-官方页面采集摘录.md`（原因改为未确认）。
+
+## 已知缺口（影响验收指标）
+
+质保条款原文、官方服务网点实时信息、软件订阅与免费期、订车合同条款四类未收录，导致 B13／B16／B17／B19 只能给核验路径、给不出答案；需求完成度因此为 22/26 = 84.6%，未达 90% 门槛。
+
+## 本地环境说明
+
+构建依赖 Python 3.13 与 PyYAML 6.0.3。若复核方环境缺少 PyYAML，`publish.py` 无法运行，"结构检查通过"仅为构建方结论，不构成双方复验。
