@@ -1,3 +1,11 @@
-e44c9fb33e850734c491b8bfd5b3c109edf247659c411a0ab9a10831ec690744  leapmotor-car-expert.zip
-8ee348eaf058479b855a09b535bd486e4823b7e697c600bb11b156c77b84954f  leapmotor-car-expert-workbuddy-skill.zip
-bd58b89c4aa175db9c7dcc511431a1f025a0a34332bd371540822e4622c25042  leapmotor-car-expert-workbuddy.zip
+# 校验清单
+# 在仓库根目录执行：sha256sum -c SHA256SUMS.txt
+# 只校验本版本时：grep "packages/v0.2.0/" SHA256SUMS.txt | sha256sum -c -
+# v0.1.0 — 2026-11-06（历史版本，保留原样，未重新打包）
+e44c9fb33e850734c491b8bfd5b3c109edf247659c411a0ab9a10831ec690744  packages/leapmotor-car-expert.zip
+8ee348eaf058479b855a09b535bd486e4823b7e697c600bb11b156c77b84954f  packages/leapmotor-car-expert-workbuddy-skill.zip
+bd58b89c4aa175db9c7dcc511431a1f025a0a34332bd371540822e4622c25042  packages/leapmotor-car-expert-workbuddy.zip
+# v0.2.0 — 2026-11-11
+a66f6734e9221da336c07a86a245f6ba5cd2d221360013738f390252d5eee797  packages/v0.2.0/leapmotor-car-expert.zip
+bb055313663e03f6aae10a9061f8c2d98c2e67afad9ceb2c3b2e37a8b41e436a  packages/v0.2.0/leapmotor-car-expert-workbuddy-skill.zip
+29940642be9fb253ecb109b07b409bf12aa8fdf63a35e17b9b0b38690dd43feb  packages/v0.2.0/leapmotor-car-expert-workbuddy.zip

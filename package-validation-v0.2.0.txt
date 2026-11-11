@@ -1,0 +1,38 @@
+零跑汽车专家 v0.2.0｜构建与结构检查记录
+日期：2026-11-11
+
+## 已生成 ZIP（位于 packages/v0.2.0/）
+
+- leapmotor-car-expert.zip — 38,339 bytes — SHA256 a66f6734e9221da336c07a86a245f6ba5cd2d221360013738f390252d5eee797
+- leapmotor-car-expert-workbuddy-skill.zip — 38,614 bytes — SHA256 bb055313663e03f6aae10a9061f8c2d98c2e67afad9ceb2c3b2e37a8b41e436a
+- leapmotor-car-expert-workbuddy.zip — 55,570 bytes — SHA256 29940642be9fb253ecb109b07b409bf12aa8fdf63a35e17b9b0b38690dd43feb
+
+## 检查结果
+
+| 阶段 | 结果 |
+|---|---|
+| 源码结构检查（profile=standard） | static_validation=passed，12 文件，入口 SKILL.md |
+| ZIP 回查（生成时读取产物再校验） | 三包 zip_readback=passed |
+| 独立复检（对成品 ZIP 再跑 check） | standard／workbuddy／expert 三包均 static_validation=passed |
+| 包内文件清点 | 技能包 12 文件（含 references 8 个）；专家包 16 文件（plugin.json、agent、头像、嵌入技能） |
+| 元数据抽查 | workbuddy 技能包已注入 display_name／display_name_en／description_zh／description_en／version／author；专家包 plugin.json version=0.2.0，agentName 与 agent 文件名一致，embedded skill version=0.2.0 |
+| SHA256 一致性 | 与 SHA256SUMS.txt 逐一核对一致 |
+| v0.1.0 历史包完整性 | 三包哈希与 v0.1.0 记录完全一致，未被覆盖 |
+
+专家显示名长度：中文 6 字符、英文 15 字符，均在 15 字符内。
+
+## 未验证（不得表述为已通过）
+
+- 未在 WorkBuddy 客户端导入技能包或专家包。
+- 未召唤专家、未执行 10 题客户端实测。
+- 未提交市场审核，未发布 GitHub Release。
+- 未在其他第三方 Agent 客户端安装调用。
+- 包内图片仅按 PNG 尺寸与体积检查，未做人工视觉复核。
+
+结构检查通过不代表平台接受、导入成功或回答准确。
+
+## 资料状态
+
+三车系 17 个版本资料核对截至 2026-11-11。全国指导价已由零跑中国官方车型页与汽车之家配置库双向核对。仍存在未确认字段与来源冲突（C11 后备箱、C16 车长／电池／电机功率等），逐项记录在各车型资料与 docs/v0.2.0-资料缺口与变更清单.md 中。
+
+`sources.json` 用 `read_status` 区分本轮读取深度：汽车之家配置页直接抓取只返回页面框架（shell-only），配置字段来自搜索索引渲染的正文。

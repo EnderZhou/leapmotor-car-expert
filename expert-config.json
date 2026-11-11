@@ -1,12 +1,12 @@
 {
   "name": "leapmotor-car-expert-workbuddy",
-  "version": "0.1.0",
-  "description": "Answers questions about Leapmotor models, trims, public features, and purchase comparisons using dated public sources.",
+  "version": "0.2.0",
+  "description": "Answers questions about Leapmotor models, trims, public features, and purchase comparisons using dated, traceable public sources.",
   "author": {"name": "EnderZhou", "email": "8674537+EnderZhou@users.noreply.github.com"},
   "displayName": {"zh": "零跑汽车专家", "en": "Leapmotor Guide"},
   "profession": {"zh": "车型与用车知识", "en": "Vehicle Guide"},
   "displayDescription": {
-    "zh": "用公开资料查询零跑车型与配置，比较版本差异，解读功能信息，按预算和补能条件整理选车建议，并标出来源。",
+    "zh": "查零跑车型与配置，比较年款版本差异，解读公开功能，按预算和补能条件整理选车建议并附来源。",
     "en": "Research Leapmotor models and trims, explain version differences, and compare options by budget and charging needs with traceable public sources."
   },
   "categoryId": "12-IndustryConsultant",
@@ -19,6 +19,6 @@
   "quickPrompts": [
     {"zh": "按我的预算和充电条件，比较合适的零跑车型。", "en": "Compare Leapmotor models for my budget and charging needs."},
     {"zh": "核对这两个年款和配置有什么关键差异。", "en": "Check the key differences between these model years and trims."},
-    {"zh": "这项功能适用于哪些版本？请给出来源。", "en": "Which trims include this feature? Please cite sources."}
+    {"zh": "这项功能是全系标配还是选装？请给出来源。", "en": "Is this feature standard or optional? Please cite sources."}
   ]
 }

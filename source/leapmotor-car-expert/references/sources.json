@@ -1,21 +1,277 @@
 {
-  "research_checked": "2026-11-06",
-  "notice": "公开网页来源索引。页面内容可能变化；引用前应核对具体版本与读取日期。",
+  "version": "0.2.0",
+  "research_checked": "2026-11-11",
+  "notice": "公开网页来源索引。页面内容、价格与配置会变化；引用前应核对具体版本与读取日期。read_status 记录本次实际读取到哪一层内容，未读到正文的来源不得当作已核实事实。",
+  "read_status_legend": {
+    "full-text": "读取到可引用的正文或结构化参数",
+    "partial": "只读取到部分字段、摘要或搜索结果渲染内容",
+    "shell-only": "只读取到页面框架、导航或脚本占位，未读到正文",
+    "blocked": "访问失败或受限"
+  },
   "sources": [
-    {"id":"official-home","publisher":"零跑汽车","type":"official-index","url":"https://www.leapmotor.cn/","retrieved":"2026-11-06","supports":"中国官网车型导航入口；未以首页内容单独证明车型配置"},
-    {"id":"official-c11-params","publisher":"零跑汽车","type":"official-configuration-dynamic-page","url":"https://leapmotor.cn/parameter-pk-web.html?carTypeId=3&platform=web","retrieved":"2026-11-06","direct_read_status":"网页读取器未返回正文；搜索索引能检索到参数文本。按动态页面处理，不能保证直达显示","supports":"C11 640纯电版本参数候选值；需从官方C11车型页进入参数／配置或以官方配置单复核"},
-    {"id":"official-c11-page-cn","publisher":"零跑汽车中国站","type":"official-product-page","url":"https://www.leapmotor.cn/C11.html","retrieved":"2026-11-06","direct_read_status":"网页读取器未返回正文","supports":"中国站C11官方产品页入口；逐项功能需回查配置表"},
-    {"id":"official-c11-page-com","publisher":"Leapmotor官方站点","type":"official-product-page-user-confirmed","url":"https://www.leapmotor.com/C11.html","retrieved":"2026-11-06","direct_read_status":"本次网页读取器无法独立读取该路径；用户报告中国境内浏览器可访问。可能存在地区／出口／动态渲染差异","supports":"中国用户阅读入口；用于提供可访问官方页面链接，不单独作为本原型配置数值证据"},
-    {"id":"official-c16-page","publisher":"零跑汽车","type":"official-product-page","url":"https://www.leapmotor.cn/C16-polymerization.html","retrieved":"2026-11-06","supports":"C16官方产品聚合页；注明若干配置非全系标配，部分功能仅限激光雷达车型或待OTA"},
-    {"id":"dcd-c10-2026-review","publisher":"懂车帝","type":"owner-review","url":"https://www.dongchedi.com/auto/series/score/9307-x-x-x-x-x","retrieved":"2026-11-06","supports":"C10旧年款个体车主体验；只用于问题线索，不代表2027款或总体口碑"},
-    {"id":"dcd-c10-2026-params","publisher":"懂车帝","type":"configuration-index","url":"https://www.dongchedi.com/auto/params-carIds-x-9307","retrieved":"2026-11-06","supports":"C10旧年款车型参数目录；需按年份隔离"},
-    {"id":"dcd-c11-params","publisher":"懂车帝","type":"configuration-index","url":"https://www.dongchedi.com/auto/params-carIds-x-4731","retrieved":"2026-11-06","supports":"历史C11配置车型目录；与官方当前640纯电配置分开"},
-    {"id":"autohome-c10-2027","publisher":"汽车之家","type":"configuration-index","url":"https://www.autohome.com.cn/7382/price.html","retrieved":"2026-11-06","supports":"C10车型年款／车型目录；最新具体配置查当前配置表"},
-    {"id":"autohome-c10-guide-2027","publisher":"汽车之家·购车手册","type":"editorial-recommendation","url":"https://www.autohome.com.cn/article?id=_SeOIKwwWEM%3D","published":"2026-06-18","retrieved":"2026-11-06","supports":"C10 2027款购车建议、智享版与激光雷达版比较、零压套装选装说明；优惠内容已过时"},
-    {"id":"pcauto-c10-config-2027","publisher":"太平洋汽车","type":"configuration-database","url":"https://price.pcauto.com.cn/s50891/config.html","retrieved":"2026-11-06","supports":"C10 2027款四配置、指导价、CLTC续航及部分参数；需官方交叉核验"},
-    {"id":"autohome-c11-config","publisher":"汽车之家","type":"configuration-index","url":"https://car.autohome.com.cn/config/series/5205-24063.html","retrieved":"2026-11-06","supports":"C11车型配置目录入口；返回为空时不作车型不存在结论"},
-    {"id":"autohome-c16-2027","publisher":"汽车之家","type":"configuration-index","url":"https://www.autohome.com.cn/7674/24057/price.html","retrieved":"2026-11-06","supports":"C16 2027款8款配置名称、座位数与页面指导价"},
-    {"id":"autohome-c16-2027-news","publisher":"汽车之家·原创车闻","type":"launch-report","url":"https://www.autohome.com.cn/news/202606/1315105.html","published":"2026-06-16","retrieved":"2026-11-06","supports":"2027款C16发布报道、改款信息与动力配置概览"},
-    {"id":"autohome-c16-2026","publisher":"汽车之家","type":"configuration-index","url":"https://www.autohome.com.cn/7674/22499/price.html","retrieved":"2026-11-06","supports":"C16历史2026款车型目录；与2027款隔离"}
+    {
+      "id": "official-c10-page",
+      "publisher": "零跑汽车中国站",
+      "type": "official-product-page",
+      "url": "https://www.leapmotor.cn/C10.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 2027款四版本全国指导价（纯电 660智享版13.28万、660激光雷达版14.28万；增程 290智享版12.58万、290激光雷达版13.58万）；纯电全域800V碳化硅架构、30-80%约16分钟；8295P座舱、60英寸AR-HUD、17.3英寸3K屏；高通8650芯片+激光雷达共28个感知硬件；主副驾双零重力座椅、18扬声器PSS音响",
+      "limits": "产品页宣传字段不等于完整配置表；未列电池容量、后备箱容积与逐项标配／选装归属"
+    },
+    {
+      "id": "official-c11-page-cn",
+      "publisher": "零跑汽车中国站",
+      "type": "official-product-page",
+      "url": "https://www.leapmotor.cn/C11.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027款五版本全国指导价（纯电 640智享版14.38万、640激光雷达版14.98万、640激光雷达智尊版15.98万；增程 300激光雷达版14.38万、300激光雷达智尊版15.38万）；2930mm轴距；纯电800V、峰值250kW、30-80%约16分钟；纯电版全系热泵；8295座舱、60英寸AR-HUD、17.3英寸3K屏；激光雷达+高通8650、车位到车位领航辅助、停车场记忆泊车；纯电版全系热泵",
+      "limits": "页面标注“具体配置以配置表为准”；增程版电池容量、纯电续航数值未在页面正文列出"
+    },
+    {
+      "id": "official-c11-page-com",
+      "publisher": "Leapmotor 官方站点",
+      "type": "official-product-page-user-confirmed",
+      "url": "https://www.leapmotor.com/C11.html",
+      "retrieved": "2026-11-11",
+      "read_status": "blocked",
+      "supports": "中国用户阅读入口；用户此前报告中国境内浏览器可访问",
+      "limits": "本次读取仍未返回正文；不单独作为配置数值证据，地区／出口／渲染差异未独立确认"
+    },
+    {
+      "id": "official-c16-page-cn",
+      "publisher": "零跑汽车中国站",
+      "type": "official-product-page",
+      "url": "https://www.leapmotor.cn/C16.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C16 2027款八版本全国指导价：五座 纯电630尊享版15.28万、630激光雷达智尊版16.68万、增程280尊享版14.58万、280激光雷达智尊版15.98万；六座 15.58／16.98／14.88／16.28万；8295P座舱、17.3英寸3K后排屏、7.5L冷暖冰箱、23扬声器、60英寸AR-HUD、二排双侧电动平移（190mm通道）、电动一键成床",
+      "limits": "未列续航、电池容量与逐项标配归属；页面未提热泵空调"
+    },
+    {
+      "id": "official-c16-page-polymerization",
+      "publisher": "零跑汽车中国站",
+      "type": "official-product-page",
+      "url": "https://www.leapmotor.cn/C16-polymerization.html",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "C16 官方产品聚合页；明确标注若干配置“非全系标配”，部分辅助驾驶功能仅限激光雷达版或需后续 OTA",
+      "limits": "2026-11-06 读取记录；具体版本归属需回查配置表"
+    },
+    {
+      "id": "autohome-c10-config-2027",
+      "publisher": "汽车之家",
+      "type": "configuration-database",
+      "url": "https://www.autohome.com.cn/config/series/7382.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 2027款四版本参数：上市时间2026-06-16；增程 CLTC 290km／WLTC 190km、200kW／360N·m、1.5L 95马力增程器；纯电 CLTC 660km、230kW／360N·m；两动力均为5门5座、4749×1900×1680mm、快充30-80% 0.26小时；慢充增程3.5小时／纯电7.5小时；整备质量1995／2040kg；0-100km/h 7.38／6.02秒",
+      "limits": "本页正文经搜索索引渲染读取；直接抓取仅返回页面框架。电池能量与后备箱容积未在本页读到"
+    },
+    {
+      "id": "autohome-c11-config-2027",
+      "publisher": "汽车之家",
+      "type": "configuration-database",
+      "url": "https://www.autohome.com.cn/config/series/5205.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027款纯电版参数：640激光雷达版14.98万、640激光雷达智尊版15.98万；CLTC 640km；快充0.27小时、慢充7.5小时；220kW／360N·m、299Ps；4780×1905×1658mm、轴距2930mm、5座；整备2110kg；0-100km/h 6.1秒；后备箱537-1203L；高通骁龙8650、禾赛AT128 128线激光雷达1颗、毫米波雷达3个、摄像头11个、超声波雷达12个",
+      "limits": "经搜索索引渲染读取；640智享版与增程版未在本页读到"
+    },
+    {
+      "id": "autohome-c16-config-2027",
+      "publisher": "汽车之家",
+      "type": "configuration-database",
+      "url": "https://www.autohome.com.cn/config/series/7674.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C16 2027款八版本参数：上市时间2026-06-16；增程 CLTC 280km／WLTC 185km、CLTC综合1230km、电池38.9kWh磷酸铁锂、200kW／360N·m、0-100km/h 8.3秒、整备2120kg、快充30-80% 16分钟、慢充3.5小时、V2L 3.3kW；纯电 CLTC 630km、230kW／360N·m、0-100km/h 6.8秒、整备2160kg；尺寸4925×1905×1770mm",
+      "limits": "经搜索索引渲染读取；轴距与纯电电池容量未在本页读到"
+    },
+    {
+      "id": "yiche-c10-trims",
+      "publisher": "易车",
+      "type": "configuration-index",
+      "url": "https://car.m.yiche.com/lingpaob11/m166506/",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 车款年款与销售状态清单：2027款四版本在售；2026款五版本停售（含纯电605、增程210）；2024款七版本停售。用于年款隔离与“旧款不等于新款”的边界说明",
+      "limits": "销售状态为平台口径，易变；不替代官方在售信息"
+    },
+    {
+      "id": "pcauto-c10-config-2027",
+      "publisher": "太平洋汽车",
+      "type": "configuration-database",
+      "url": "https://price.pcauto.com.cn/s50891/config.html",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "C10 2027款四配置、指导价、CLTC续航、30-80%快充0.26小时；与汽车之家、官方页价格一致",
+      "limits": "2026-11-06 读取；未复核电池容量"
+    },
+    {
+      "id": "autohome-c10-guide-2027",
+      "publisher": "汽车之家·购车手册",
+      "type": "editorial-recommendation",
+      "url": "https://www.autohome.com.cn/article?id=_SeOIKwwWEM%3D",
+      "published": "2026-06-18",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "C10 2027款智享版与激光雷达版比较、零压舒适配置属选装的说明；属编辑建议",
+      "limits": "文中权益与优惠已过时；不构成官方承诺"
+    },
+    {
+      "id": "sina-c10-2027",
+      "publisher": "新浪·自媒体",
+      "type": "media-summary",
+      "url": "https://k.sina.cn/article_7880068362_1d5b04d0a06801jfoy.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 2027款汇总口径：轴距2825mm、后备箱510-1809L、纯电81.9kWh磷酸铁锂、增程油电综合续航超1200km、激光雷达版3毫米波雷达/11摄像头",
+      "limits": "自媒体综合整理，非一手来源；电池容量与后备箱容积未获官方或配置库交叉确认"
+    },
+    {
+      "id": "pcauto-c11-note",
+      "publisher": "太平洋汽车·经销商内容",
+      "type": "dealer-content",
+      "url": "https://m.pcauto.com.cn/note/888713532326021881.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027款价格带与型号列举（14.38万起）；纯电后备箱523L（放倒1203L）、增程485L（放倒1151L）；增程300激光雷达版14.38万、300激光雷达智尊版15.38万；离地间隙纯电175mm／增程170mm",
+      "limits": "经销商营销内容，含平台补贴等易变信息；后备箱容积与汽车之家537L不一致"
+    },
+    {
+      "id": "modiauto-c11-14799",
+      "publisher": "无敌电动网",
+      "type": "configuration-index",
+      "url": "https://m.modiauto.com.cn/xuanche/m_14799.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027款纯电640激光雷达版：电池81.9kWh磷酸铁锂、快充0.27小时／慢充7.5小时、后备箱523L、前双叉臂后五连杆、L2级辅助驾驶、自动变道、高速导航辅助、记忆泊车",
+      "limits": "第三方整理；电池容量与后备箱容量未获官方交叉确认"
+    },
+    {
+      "id": "yiche-c11-dealer",
+      "publisher": "易车·4S店页",
+      "type": "dealer-content",
+      "url": "https://dealer.yiche.com/100259301/news/202610/1489254007.html",
+      "published": "2026-10",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027款五版本指导价与某店优惠0.15万元；纯电640km、增程纯电300km、轴距2930mm",
+      "limits": "门店报价与优惠为易变商业信息，不代表全国；不能作为官方指导价替代"
+    },
+    {
+      "id": "zjchewang-c10-discount",
+      "publisher": "浙江车网",
+      "type": "dealer-content",
+      "url": "http://www.zjchewang.com/html/news/20261028/676877_1.html",
+      "published": "2026-10-29",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "杭州经销商 2027款 C10 现金优惠0.15万元（四版本同幅）、部分现车；轴距2825mm、17.3英寸3K屏、60英寸AR-HUD、8295P、3.3kW V2L",
+      "limits": "单一经销商、单一时点报价；不得表述为官方政策或全国行情"
+    },
+    {
+      "id": "weixin-c16-guide",
+      "publisher": "汽车类公众号·购车手册",
+      "type": "editorial-recommendation",
+      "url": "http://mp.weixin.qq.com/s?__biz=MzA4NTM1NzIzNw==&mid=2649497268&idx=1&sn=1fbe3625e3cc926ecaf6bd91e15adde2",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C16 2027款差价结构（同配置纯电比增程贵7000元、6座比5座贵3000元、激光雷达智尊版比尊享版贵1.4万元）；上市权益与两个选装包内容（悦境零压尊享套装、全配套装各10000元）；纯电81.9kWh／800V、增程38.9kWh；轴距2825mm",
+      "limits": "权益为2026年6-7月限时政策，已过期；属媒体整理，不作为当前优惠依据"
+    },
+    {
+      "id": "youjia-c16-conflict-sample",
+      "publisher": "有驾",
+      "type": "media-review",
+      "url": "https://youjia-pc.bdstatic.com/article/10017307573517102205.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "仅用于记录来源冲突：该文给出 C16 售价15.18–18.18万、车长4915mm、增程电池38.7kWh、驱动电机170kW、综合续航1150km，与官方页及汽车之家配置库不一致",
+      "limits": "与一手来源冲突且无法自证版本口径；本原型不采用其数值，仅在冲突示例中并列展示"
+    },
+    {
+      "id": "toutiao-c11-conflict-sample",
+      "publisher": "今日头条·自媒体",
+      "type": "media-summary",
+      "url": "https://m.toutiao.com/article/7651852191069651508",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "仅用于记录来源冲突：该文称 C11 2027款指导价14.98–16.58万、640智享版14.98万、激光雷达版15.58万、智尊版16.58万，与官方页14.38／14.98／15.98万不一致；另称后备箱375L／840L，与配置库537L或523L均不一致",
+      "limits": "与官方页冲突；本原型以官方页为准，不采用其价格与容积数值"
+    },
+    {
+      "id": "sina-c16-2027",
+      "publisher": "新浪·自媒体",
+      "type": "media-summary",
+      "url": "https://k.sina.cn/article_7879996685_1d5af350d06802gvl2.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C16 2027款：轴距2825mm、离地间隙200mm、增程38.9kWh／CLTC综合1230km、纯电81.9kWh／630km、800V平台、后备箱六座275L／五座582-2077L、轮胎规格、FSD可变阻尼减振器全系标配",
+      "limits": "自媒体整理，与官方页未逐项对应；后备箱数值与公众号文章209L口径不同，属口径差异需并列"
+    },
+    {
+      "id": "dcd-c10-owner-review",
+      "publisher": "懂车帝",
+      "type": "owner-review",
+      "url": "https://www.dongchedi.com/auto/series/score/9307-x-x-x-x-x",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "C10 旧年款个体车主体验；只用于问题线索，不代表 2027 款或总体口碑",
+      "limits": "单条评论不构成续航测试或故障率统计"
+    },
+    {
+      "id": "autohome-c16-2027-news",
+      "publisher": "汽车之家·原创车闻",
+      "type": "launch-report",
+      "url": "https://www.autohome.com.cn/news/202606/1315105.html",
+      "published": "2026-06-16",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "2027款 C16 发布报道、改款信息与动力配置概览",
+      "limits": "报道不替代当前订购配置单"
+    },
+    {
+      "id": "autohome-c16-2026",
+      "publisher": "汽车之家",
+      "type": "configuration-index",
+      "url": "https://www.autohome.com.cn/7674/22499/price.html",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "C16 历史 2026 款车型目录；与 2027 款隔离",
+      "limits": "历史版本，不得与 2027 款参数混写"
+    },
+    {
+      "id": "autohome-c10-2027",
+      "publisher": "汽车之家",
+      "type": "configuration-index",
+      "url": "https://www.autohome.com.cn/7382/price.html",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "C10 车型年款／车型目录入口",
+      "limits": "最新具体配置需查当前配置表"
+    },
+    {
+      "id": "autohome-c11-config",
+      "publisher": "汽车之家",
+      "type": "configuration-index",
+      "url": "https://car.autohome.com.cn/config/series/5205-24063.html",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "C11 车型配置目录入口；返回为空时不作车型不存在结论",
+      "limits": "空结果不代表停产"
+    },
+    {
+      "id": "official-home",
+      "publisher": "零跑汽车",
+      "type": "official-index",
+      "url": "https://www.leapmotor.cn/",
+      "retrieved": "2026-11-06",
+      "read_status": "partial",
+      "supports": "中国官网车型导航入口；未以首页内容单独证明车型配置",
+      "limits": "仅作入口"
+    }
   ]
 }
