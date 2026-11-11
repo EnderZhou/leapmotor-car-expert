@@ -1,58 +1,74 @@
 # 零跑汽车专家
 
-基于公开资料的零跑车型知识 Skill 与 WorkBuddy 专家。当前版本 **v0.2.0**，整理 C10、C11、C16 的 2027 款共 17 个版本，帮助用户查询、比较和理解公开信息。**本项目为独立社区项目，不代表零跑汽车官方服务或授权。**
+基于公开资料的零跑车型知识 Skill 与 WorkBuddy 专家。当前版本 **v0.3.0**，覆盖 C10、C11、C16 的 2027 款共 17 个版本（中国市场）。**本项目为独立社区项目，不代表零跑汽车官方服务或授权。**
 
 ## 下载与使用
 
-`packages/v0.2.0/` 下有三种包：
+`packages/v0.3.0/` 下有三种包：
 
-- `leapmotor-car-expert.zip`：标准 Agent Skill 包，入口为 `SKILL.md`。按目标 Agent 的 Skill 安装说明导入。
-- `leapmotor-car-expert-workbuddy-skill.zip`：WorkBuddy 技能格式，可通过 WorkBuddy 技能上传入口导入。
-- `leapmotor-car-expert-workbuddy.zip`：WorkBuddy 单专家包，内含技能、公开资料和原创头像。按 WorkBuddy 开放平台专家包流程导入。
+- `leapmotor-car-expert.zip`：标准 Agent Skill 包，入口为 `SKILL.md`。
+- `leapmotor-car-expert-workbuddy-skill.zip`：WorkBuddy 技能格式，可通过技能上传入口导入。
+- `leapmotor-car-expert-workbuddy.zip`：WorkBuddy 单专家包，内含技能、公开资料和原创头像。
 
-每个版本均提供 SHA256 校验值，见 [SHA256SUMS.txt](SHA256SUMS.txt)；构建与检查记录见 [package-validation-v0.2.0.txt](package-validation-v0.2.0.txt)。v0.1.0 的三个包保留在 `packages/` 原处，未改动。
+校验值见 [SHA256SUMS.txt](SHA256SUMS.txt)，构建记录见 [package-validation-v0.3.0.txt](package-validation-v0.3.0.txt)。v0.1.0、v0.2.0 的历史包保留在原处，未被覆盖。
 
 ## 能回答什么
 
-- 查询已整理车型的指导价、动力、续航口径、补能、尺寸与公开配置。
-- 比较年款、纯电／增程与配置等级，按预算和补能条件说明取舍。
-- 解释公开功能资料，区分官方介绍、媒体内容、车主个体体验和分析意见。
-- 对价格、权益、OTA 和在售状态等易变信息提示现场核验，并标注资料日期。
-- 来源冲突时并列展示双方数值，不按多数来源判定；资料不足时直说「未确认」。
+- 查 17 个版本的价格、续航（CLTC／WLTC）、电池、功率、补能、尺寸、座位。
+- 算差价：贵一万元买到哪些具体配置、五座六座差在哪、增程比纯电贵多少。
+- 解释辅助驾驶：硬件有什么、官方说支持什么、是否已交付——三层分开，不混为一谈。
+- 按预算、补能条件、乘坐需求整理候选，并说明建议成立的前提。
+- 对价格、权益、OTA、在售状态提示现场核验；资料不足直说“未确认”，来源冲突并列展示。
+
+## 三张核心表
+
+| 想知道什么 | 查哪张 |
+|---|---|
+| 版本参数 | [trim-comparison.md](source/leapmotor-car-expert/references/trim-comparison.md) |
+| 差价与配置增量 | [trim-deltas.md](source/leapmotor-car-expert/references/trim-deltas.md) |
+| 辅助驾驶可用性 | [adas-matrix.md](source/leapmotor-car-expert/references/adas-matrix.md) |
 
 ## 数据来源与口径
 
-17 个版本的全国指导价已由零跑中国官方车型页与汽车之家配置库双向核对，核对日期 2026-11-11。汽车之家、太平洋汽车、易车等作参数与交叉核对补充；经销商页面与门店行情只作单点记录，不当官方政策。
+17 个版本的价格按**来源级别**标注：
 
-`sources.json` 为每条来源标注 `read_status`，区分本轮实际读到哪一层内容（`full-text`／`partial`／`shell-only`／`blocked`）。已知的未确认字段与 10 处来源冲突，见 [资料缺口与变更清单](docs/v0.2.0-资料缺口与变更清单.md) 与各车型资料。第三方内容与权利边界见 [第三方来源说明](THIRD_PARTY_NOTICES.md)。
+- **L1（15 个版本）**：零跑中国官方车型页可复现，且配置库数值一致（C10 4 版、C11 纯电 3 版、C16 8 版）。
+- **L1\*（2 个版本）**：C11 增程两款。官方页读到过这两档价格，但独立复核时只重现纯电三档；判断为标签页动态渲染所致，另有配置库与经销商页支持。引用时须说明这一限制，因此**不能表述为“17 个版本均由官方双向核对”**。
 
-C11 阅读入口使用 [零跑 C11 官方车型页](https://www.leapmotor.cn/C11.html)；.com 域名入口（`https://www.leapmotor.com/C11.html`）在中国境内可访问，但本次读取工具仍未读到正文，两入口分别标注，不互相替代。
+`sources.json` 共 36 条来源，每条标 `read_status`（full-text／partial／shell-only／blocked）。官方页面采集摘录见 [证据文件](docs/evidence/2026-11-11-官方页面采集摘录.md)。
+
+已知未确认字段与来源冲突逐项记录在各车型文档；v0.2.0 的两处记录错误已在 [勘误记录](docs/勘误记录-v0.2.0.md) 中说明并修正。
 
 ## 覆盖范围与边界
 
-已覆盖 C10 2027 款 4 版、C11 2027 款 5 版、C16 2027 款 8 版。**不是零跑全系数据库**，也不覆盖上述车系的其他年款、选装包完整清单、车主手册、故障码与售后维修。
+已覆盖 C10 2027 款 4 版、C11 2027 款 5 版、C16 2027 款 8 版。**不是零跑全系数据库**，也不覆盖其他车系、其他年款、选装包完整清单与当前价格、车主手册、故障码与售后维修。
 
-只处理公开车型知识，不读取零跑账号或实时车辆数据，不定位，不执行车控，不提供未经官方手册支持的菜单步骤、故障诊断或维修指令。
+不读取零跑账号或实时车辆数据，不定位，不执行车控，不提供未经手册支持的菜单步骤、故障诊断或维修指令。不承诺交付时间、优惠幅度、OTA 时间表或辅助驾驶开通范围。
 
 ## 验证状态
 
-- 离线结构检查：通过（三包 static_validation=passed，SHA256 已核对）。
-- 离线回归测试：42 题，40 通过、2 部分通过、0 失败，通过率 95.2%；版本准确、安全隐私、引用覆盖三项硬门槛通过。详见 [执行记录](tests/offline-regression-v0.2.0.md)。
-- **WorkBuddy 客户端实测：未执行。** 未在客户端导入、召唤、跑 10 题实测，未提交市场审核，未发布 Release。结构检查通过不代表平台接受或回答准确。
+| 项目 | 状态 |
+|---|---|
+| 离线结构检查 | 通过：三包 static_validation=passed，SHA256 一致 |
+| 离线回归（60 题） | 58 通过、2 部分通过、0 失败，96.7%；安全 8/8。见 [记录](tests/offline-regression-v0.3.0.md) |
+| 25 条事实独立复核 | **未执行**，表格见 [工作表](tests/independent-review-worksheet-v0.3.0.md) |
+| WorkBuddy 客户端实测（16 题） | **未执行**，清单见 [清单](tests/client-test-checklist-v0.3.0.md) |
+| Git 推送 / tag / Release | 未执行 |
+
+离线回归由构建者自评，且题目按已有证据设计，分数偏高，不能替代独立复核与客户端实测。**在上述两项完成前，本版本不称“验收通过”。**
 
 ## 项目结构
 
-- `source/leapmotor-car-expert/`：通用 Skill 源码及随包车型资料。
-- `packages/`：v0.1.0 三个包；`packages/v0.2.0/`：当前版本三个包与构建报告。
-- `test-cases.md`：42 题验收测试集（含判定规则）。
-- `tests/offline-regression-v0.2.0.md`：逐题执行记录。
-- `docs/`：资料缺口清单、交付摘要。
-- `package-validation-v0.2.0.txt`：本轮构建与结构检查结果及未验证阶段。
+- `source/leapmotor-car-expert/`：通用 Skill 源码与 11 个参考资料文件。
+- `packages/`：v0.1.0、v0.2.0 历史包；`packages/v0.3.0/`：当前版本三包与构建报告。
+- `test-cases.md`：60 题验收测试集。
+- `tests/`：离线回归记录、独立复核工作表、客户端实测清单。
+- `docs/`：资料缺口清单、勘误记录、交付摘要、官方页面采集摘录。
 
 ## 许可证
 
-MIT 许可证适用于本仓库自行编写的技能指令、专家提示词、配置和资料整理。第三方网页、商标及其他权利由其各自权利人保留，详见 [LICENSE](LICENSE) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+MIT 许可证适用于本仓库自行编写的技能指令、专家提示词、配置与资料整理。第三方网页、商标及其他权利由其各自权利人保留，详见 [LICENSE](LICENSE) 与 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 反馈
 
-欢迎通过 GitHub Issues 报告资料链接失效、车型版本混淆或技能包导入问题。提交时请描述地区、车系、年款／配置和资料日期，不要提交车主账号、验证码、车辆识别号、定位或其他个人车辆信息。
+欢迎通过 GitHub Issues 报告资料链接失效、版本混淆或包导入问题。提交时请描述地区、车系、年款／配置与资料日期，不要提交车主账号、验证码、车辆识别号、定位或其他个人车辆信息。

@@ -2,3 +2,6 @@
 Thumbs.db
 __pycache__/
 *.py[cod]
+
+# 本地工作记忆与工具缓存，不属于公开项目源文件
+.workbuddy/

@@ -1,0 +1,45 @@
+零跑汽车专家 v0.3.0｜构建与结构检查记录
+日期：2026-11-11
+
+## 已生成 ZIP（位于 packages/v0.3.0/）
+
+- leapmotor-car-expert.zip — 49,051 bytes — SHA256 b4c2d2b6d58f12b1ff656482a5a8b369ee84f83e49a5c373f7d5e627b0c06b72
+- leapmotor-car-expert-workbuddy-skill.zip — 49,324 bytes — SHA256 d9cb42ed92e1df4da6c603a6fff9e41a61e620b79101a45695e4621f2fe81d1c
+- leapmotor-car-expert-workbuddy.zip — 67,488 bytes — SHA256 65eb688c66d78e89eeb3e12a0ef0c2fb95d2b59c009195beb850b8b0605eb969
+
+构建顺序：先按 v0.3.0 资料生成三包，随后发现包内 `README.md` 仍为 0.2.0 标题与表述，修正后以 --force 重新生成三包；上列哈希为**最终产物**。
+
+## 检查结果
+
+| 阶段 | 结果 |
+|---|---|
+| 源码结构检查（profile=standard） | static_validation=passed，15 文件，入口 SKILL.md |
+| ZIP 回查（生成时读取产物再校验） | 三包 zip_readback=passed |
+| 独立复检（对成品 ZIP 再跑 check） | standard 15 文件／workbuddy 15 文件／expert 19 文件，均 static_validation=passed |
+| 包内文件清点 | 技能包 11 个 references（含新增 trim-comparison／trim-deltas／adas-matrix）；专家包含 plugin.json、agent、头像、嵌入技能 |
+| 可疑条目扫描 | 无 `.workbuddy`、无嵌套 ZIP、无临时文件 |
+| 包内 README 版本 | 已核对为 0.3.0 |
+| SHA256 一致性 | 与 SHA256SUMS.txt v0.3.0 段一致 |
+| 历史包完整性 | v0.1.0、v0.2.0 六包哈希未变，未覆盖 |
+
+专家显示名：中文 6 字符、英文 15 字符。
+
+## 未验证（不得表述为已通过）
+
+- 未在 WorkBuddy 客户端导入技能包或专家包。
+- 未召唤专家、未执行 16 题客户端实测（清单见 tests/client-test-checklist-v0.3.0.md）。
+- 25 个关键事实的非开发者独立复核未执行（表格见 tests/independent-review-worksheet-v0.3.0.md）。
+- 未提交市场审核，未推送 Git，未创建 tag，未发布 GitHub Release。
+- 头像仅按 PNG 尺寸与体积检查，未做人工视觉复核。
+
+## 资料状态
+
+17 个版本，核对截至 2026-11-11。价格来源分级：L1 15 个、L1\* 2 个（C11 增程）。
+
+新增：`trim-comparison.md`（17 版本矩阵）、`trim-deltas.md`（6 组差价 + 4 组示例回答）、`adas-matrix.md`（硬件／官方宣称／交付状态三列）。
+
+未确认与冲突逐项记录在各车型文档；官方动态页面的采集摘录见 `docs/evidence/2026-11-11-官方页面采集摘录.md`。
+
+## 本地环境说明
+
+构建依赖 Python 3.13 与 PyYAML 6.0.3。审查方复核环境缺少 PyYAML，未能重跑同一结构检查器，因此“结构检查通过”仅为构建方结论，不是双方复验结果。

@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "research_checked": "2026-11-11",
   "notice": "公开网页来源索引。页面内容、价格与配置会变化；引用前应核对具体版本与读取日期。read_status 记录本次实际读取到哪一层内容，未读到正文的来源不得当作已核实事实。",
   "read_status_legend": {
@@ -272,6 +272,106 @@
       "read_status": "partial",
       "supports": "中国官网车型导航入口；未以首页内容单独证明车型配置",
       "limits": "仅作入口"
+    },
+    {
+      "id": "yiche-c10-config-2027",
+      "publisher": "易车",
+      "type": "configuration-database",
+      "url": "https://car.m.yiche.com/lingpaob11/m166506/",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 2027款四版本完整参数表：电池 38.7 kWh（增程）／81.9 kWh（纯电）、快充 0.27 小时折 16 分钟、慢充 3.5／7.5 小时、后备箱 510-1809 L、油箱 50 L、增程器 70 kW、轴距 2825 mm、整备 1995／2040 kg、百公里耗电 18.2／13.8 kWh、电芯品牌",
+      "limits": "经搜索索引渲染读取车款参数表；平台整理口径，与汽车之家 0.26 小时（约 15.6 分钟）存在秒级差异，本原型统一表述为约 16 分钟"
+    },
+    {
+      "id": "yiche-c11-config-2027",
+      "publisher": "易车",
+      "type": "configuration-database",
+      "url": "https://car.m.yiche.com/",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027款五版本完整参数表：增程 41.7 kWh、纯电 81.9 kWh、增程快充 0.3 小时（18 分钟）／慢充 4 小时、增程 200 kW／320 N·m、纯电 220 kW／360 N·m、增程后备箱 485-1151 L、纯电 537-1203 L、增程油箱 47 L、整备 2090／2110 kg、前双叉臂后五连杆、CLTC 纯电 300／640 km",
+      "limits": "经搜索索引渲染读取；未确认车系专属可直达路径（移动站为通用入口），引用时须说明检索方式"
+    },
+    {
+      "id": "yoojia-c10-trim-diff",
+      "publisher": "有驾",
+      "type": "media-trim-analysis",
+      "url": "https://www.yoojia.com/article/9417727368469186838.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 增程两款配置差异：激光雷达版增加 60 英寸 AR-HUD、音响由 14 个 PSS 升至 18 个；标配 18 英寸轮圈（20 英寸选装）；油箱 50 L、38.7 kWh、CLTC 综合 1300 km／WLTC 综合 1080 km；悦境零压套装不可拆项选装",
+      "limits": "媒体整理，非官方配置表；AR-HUD 与音响归属与官方页整体表述不同，见冲突记录"
+    },
+    {
+      "id": "toutiao-c10-trim-diff",
+      "publisher": "今日头条·自媒体",
+      "type": "media-trim-analysis",
+      "url": "https://www.toutiao.com/article/7703834049160167999",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 增程两款配置差异的同源转载：智享版 14 个 PSS 扬声器、激光雷达版 18 个并增加 60 英寸 AR-HUD；两款电池与动力规格相同，1 万元差价落在辅助驾驶与座舱",
+      "limits": "与有驾同源，非独立第二来源"
+    },
+    {
+      "id": "sina-c10-advisor",
+      "publisher": "新浪汽车",
+      "type": "media-trim-analysis",
+      "url": "https://auto.sina.cn/2026-09-12/detail-inirpyzh6637162.d.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 增程两配置差异表：激光雷达版 = 智享版 + 禾赛 AT128 激光雷达 + 8650 芯片 + 城市 NOA；另称全系标配 8295P、17.3 英寸屏、60 英寸 AR-HUD、FSD 减震、双零重力座椅",
+      "limits": "“全系标配 AR-HUD”与有驾／浙江车网的“激光雷达版才有”冲突，不采信其全系口径"
+    },
+    {
+      "id": "autohome-c11-guide-2027",
+      "publisher": "汽车之家·购车手册",
+      "type": "editorial-recommendation",
+      "url": "https://www.autohome.com.cn/advice/202606/1315155.html",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027款三配置梯度：仅纯电智享版无激光雷达，其余四款标配激光雷达并支持车位到车位领航辅助；智尊版较中配贵 1 万元，含前排双零重力座椅、4 向腿托腰托按摩、二排右侧小桌板、主驾头枕音响、二排通风加热、香氛、后排控制屏、Nappa 包覆；悦境零压套装选装价 10000 元、限时享 5000 元优惠",
+      "limits": "编辑建议与限时权益（2026 年 7 月底前）已过期"
+    },
+    {
+      "id": "autohome-c11-ladder",
+      "publisher": "汽车之家",
+      "type": "media-trim-analysis",
+      "url": "https://page.autohome.com.cn/pc/article/detail/4022075",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 五款分三梯度、增程 14.38–15.38 万、纯电 14.38–15.98 万；中配较入门差价用于补齐激光雷达高阶智驾并升级杜比全景声与律动氛围灯",
+      "limits": "媒体解读，配置归属需回查配置表"
+    },
+    {
+      "id": "toutiao-c11-trim-diff",
+      "publisher": "今日头条·自媒体",
+      "type": "media-trim-analysis",
+      "url": "https://m.toutiao.com/article/7687196077828719145",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 纯电三档逐项差异：智享版基础配置清单（20 英寸轮圈、540 度影像、ACC、L2、自动泊车、10.25 英寸仪表）；激光雷达版 +0.6 万元增方向盘加热、60 英寸 HUD、21 扬声器、256 色氛围灯、后排隐私玻璃、8650、128 线激光雷达、城市/高快领航、自动变道、匝道进出、记忆泊车；智尊版 +1 万元增真皮方向盘、Nappa、零重力座椅、腿托、前排按摩、二排通风加热、小桌板、23 扬声器、头枕扬声器、后排多媒体控制、香氛",
+      "limits": "媒体整理；21 与 23 扬声器归属与官方页整体表述不一致，列为冲突"
+    },
+    {
+      "id": "yiche-c10-review",
+      "publisher": "易车",
+      "type": "media-review",
+      "url": "https://www.yiche.com/zhai/2709839/",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C10 纯电 81.9 kWh、百公里电耗约 14 度、CLTC 660 km、30-80% 16 分钟；激光雷达版 128 线 + 8650 + 28 感知，支持高速与城区 NOA；智享版为 L2 级基础辅助驾驶",
+      "limits": "试驾报道，续航与噪声等体验结论属单次测试，不推广"
+    },
+    {
+      "id": "wcevcar-c11-2027",
+      "publisher": "Wancheng EV（第三方销售站）",
+      "type": "dealer-content",
+      "url": "https://wcevcar.com/en/car/leapmotor-c11-reev-ev-2027",
+      "retrieved": "2026-11-11",
+      "read_status": "partial",
+      "supports": "C11 2027 五版本层级英文描述：增程 300 CLTC、综合 1220 km、200 kW；纯电 640；激光雷达版配 21 扬声器杜比；智尊版加 Nappa、前后排通风加热按摩、后排小桌板",
+      "limits": "第三方销售站点，非官方；扬声器数量与官方页 23 扬冲突，仅作交叉参考"
     }
   ]
 }
