@@ -1,0 +1,145 @@
+v0.5.2 验证实录
+日期：2026-11-11
+范围：source/leapmotor-car-expert 与 scripts/facts.py（未含客户端实测）
+
+$ python scripts/facts.py check
+记录 261 条，版本 17 个，冲突 3 组，预算用例 16 个
+视图：trim-comparison.md / purchase-cost.md 税表 / test-cases.md 预算表 均为最新
+RESULT: PASS
+
+$ python scripts/facts.py selftest
+baseline                         exit=0 期望0  OK
+price_changed_to_1               exit=1 期望非0  OK
+invalid_source_id                exit=1 期望非0  OK
+L1_without_source                exit=1 期望非0  OK
+missing_checked_date             exit=1 期望非0  OK
+invalid_status                   exit=1 期望非0  OK
+missing_matrix                   exit=1 期望非0  OK
+duplicate_primary_key            exit=1 期望非0  OK
+negative_seats                   exit=1 期望非0  OK
+non_numeric_battery              exit=1 期望非0  OK
+invalid_date_99                  exit=1 期望非0  OK
+year_changed_to_1900             exit=1 期望非0  OK
+duplicate_source_id              exit=1 期望非0  OK
+conflict_claims_cleared          exit=1 期望非0  OK
+unrelated_source_boosts_rank     exit=1 期望非0  OK
+low_trim_chip_from_marketing     exit=1 期望非0  OK
+budget_case_input_changed        exit=1 期望非0  OK
+budget_case_q19_filter_changed   exit=1 期望非0  OK
+budget_case_expected_tampered    exit=1 期望非0  OK
+branch_precondition_removed      exit=1 期望非0  OK
+branch_fallback_missing          exit=1 期望非0  OK
+open_case_gains_filter           exit=1 期望非0  OK
+legal_update_after_render        exit=0 期望0  OK
+场景合计 23 个：错误注入 21 个 + 基线 1 个 + 合法更新 1 个
+SELFTEST: PASS
+
+$ python scripts/facts.py atest
+Q17-price-140000 候选集合              实得 ['c10-290-lidar', 'c10-290-zx', 'c10-660-zx'] 期望 ['c10-290-lidar', 'c10-290-zx', 'c10-660-zx'] OK (精确比较集合，不只看个数)
+Q17-landing-140000 候选集合            实得 ['c10-290-zx', 'c10-660-zx'] 期望 ['c10-290-zx', 'c10-660-zx'] OK (精确比较集合，不只看个数)
+Q17-landing-140000/c10-290-lidar 购置税(元) 实得 6008.85                      期望 6008.85              OK (独立算式 含税÷1.13×5%)
+Q17-landing-140000/c10-290-lidar 余额(元) 实得 -1808.85                     期望 -1808.85             OK (预算−裸车−购置税，未扣保险)
+Q18-price-150000 候选集合              实得 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx', 'c11-300-lidar', 'c11-640-lidar', 'c11-640-zx', 'c16-280-zx-5', 'c16-280-zx-6'] 期望 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx', 'c11-300-lidar', 'c11-640-lidar', 'c11-640-zx', 'c16-280-zx-5', 'c16-280-zx-6'] OK (精确比较集合，不只看个数)
+Q18-landing-150000 候选集合            实得 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx'] 期望 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx'] OK (精确比较集合，不只看个数)
+Q18-landing-150000/c11-300-lidar 购置税(元) 实得 6362.83                      期望 6362.83              OK (独立算式 含税÷1.13×5%)
+Q18-landing-150000/c11-300-lidar 余额(元) 实得 -162.83                      期望 -162.83              OK (预算−裸车−购置税，未扣保险)
+Q18-landing-150000/c11-640-zx 购置税(元) 实得 6362.83                      期望 6362.83              OK (独立算式 含税÷1.13×5%)
+Q18-landing-150000/c11-640-zx 余额(元) 实得 -162.83                      期望 -162.83              OK (预算−裸车−购置税，未扣保险)
+Q18-landing-150000/c16-280-zx-5 购置税(元) 实得 6451.33                      期望 6451.33              OK (独立算式 含税÷1.13×5%)
+Q18-landing-150000/c16-280-zx-5 余额(元) 实得 -2251.33                     期望 -2251.33             OK (预算−裸车−购置税，未扣保险)
+Q19-price-170000 候选集合              实得 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6', 'c16-630-zx-6'] 期望 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6', 'c16-630-zx-6'] OK (精确比较集合，不只看个数)
+Q19-landing-170000 候选集合            实得 ['c16-280-zx-6', 'c16-630-zx-6'] 期望 ['c16-280-zx-6', 'c16-630-zx-6'] OK (精确比较集合，不只看个数)
+Q19-landing-170000/c16-280-lidar-6 购置税(元) 实得 7203.54                      期望 7203.54              OK (独立算式 含税÷1.13×5%)
+Q19-landing-170000/c16-280-lidar-6 余额(元) 实得 -3.54                        期望 -3.54                OK (预算−裸车−购置税，未扣保险)
+Q19-landing-170000/c16-630-lidar-6 购置税(元) 实得 7513.27                      期望 7513.27              OK (独立算式 含税÷1.13×5%)
+Q19-landing-170000/c16-630-lidar-6 余额(元) 实得 -7313.27                     期望 -7313.27             OK (预算−裸车−购置税，未扣保险)
+Q20-price-130000 候选集合              实得 ['c10-290-zx']               期望 ['c10-290-zx']       OK (精确比较集合，不只看个数)
+Q20-landing-130000 候选集合            实得 []                           期望 []                   OK (精确比较集合，不只看个数)
+Q20-landing-130000/c10-290-zx 购置税(元) 实得 5566.37                      期望 5566.37              OK (独立算式 含税÷1.13×5%)
+Q20-landing-130000/c10-290-zx 余额(元) 实得 -1366.37                     期望 -1366.37             OK (预算−裸车−购置税，未扣保险)
+Q21-price-150000 候选集合              实得 ['c10-290-lidar', 'c10-660-lidar', 'c11-300-lidar', 'c11-640-lidar'] 期望 ['c10-290-lidar', 'c10-660-lidar', 'c11-300-lidar', 'c11-640-lidar'] OK (精确比较集合，不只看个数)
+Q21-landing-150000 候选集合            实得 ['c10-290-lidar', 'c10-660-lidar'] 期望 ['c10-290-lidar', 'c10-660-lidar'] OK (精确比较集合，不只看个数)
+Q21-landing-150000/c11-300-lidar 购置税(元) 实得 6362.83                      期望 6362.83              OK (独立算式 含税÷1.13×5%)
+Q21-landing-150000/c11-300-lidar 余额(元) 实得 -162.83                      期望 -162.83              OK (预算−裸车−购置税，未扣保险)
+Q21-landing-150000/c11-640-lidar 购置税(元) 实得 6628.32                      期望 6628.32              OK (独立算式 含税÷1.13×5%)
+Q21-landing-150000/c11-640-lidar 余额(元) 实得 -6428.32                     期望 -6428.32             OK (预算−裸车−购置税，未扣保险)
+Q22-baseline-price-160000 候选集合     实得 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx', 'c11-300-lidar', 'c11-300-zun', 'c11-640-lidar', 'c11-640-zun', 'c11-640-zx', 'c16-280-lidar-5', 'c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5', 'c16-630-zx-6'] 期望 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx', 'c11-300-lidar', 'c11-300-zun', 'c11-640-lidar', 'c11-640-zun', 'c11-640-zx', 'c16-280-lidar-5', 'c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5', 'c16-630-zx-6'] OK (精确比较集合，不只看个数)
+Q22-baseline-landing-160000 候选集合   实得 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx', 'c11-300-lidar', 'c11-640-lidar', 'c11-640-zx', 'c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5'] 期望 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx', 'c11-300-lidar', 'c11-640-lidar', 'c11-640-zx', 'c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5'] OK (精确比较集合，不只看个数)
+Q22-baseline-landing-160000/c11-300-zun 购置税(元) 实得 6805.31                      期望 6805.31              OK (独立算式 含税÷1.13×5%)
+Q22-baseline-landing-160000/c11-300-zun 余额(元) 实得 -605.31                      期望 -605.31              OK (预算−裸车−购置税，未扣保险)
+Q22-baseline-landing-160000/c16-630-zx-6 购置税(元) 实得 6893.81                      期望 6893.81              OK (独立算式 含税÷1.13×5%)
+Q22-baseline-landing-160000/c16-630-zx-6 余额(元) 实得 -2693.81                     期望 -2693.81             OK (预算−裸车−购置税，未扣保险)
+Q22-price-160000 候选集合              实得 ['c16-280-lidar-5', 'c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5', 'c16-630-zx-6'] 期望 ['c16-280-lidar-5', 'c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5', 'c16-630-zx-6'] OK (精确比较集合，不只看个数)
+Q22-landing-160000 候选集合            实得 ['c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5'] 期望 ['c16-280-zx-5', 'c16-280-zx-6', 'c16-630-zx-5'] OK (精确比较集合，不只看个数)
+Q22-landing-160000/c16-630-zx-6 购置税(元) 实得 6893.81                      期望 6893.81              OK (独立算式 含税÷1.13×5%)
+Q22-landing-160000/c16-630-zx-6 余额(元) 实得 -2693.81                     期望 -2693.81             OK (预算−裸车−购置税，未扣保险)
+Q22-landing-160000/c16-280-lidar-5 购置税(元) 实得 7070.80                      期望 7070.80              OK (独立算式 含税÷1.13×5%)
+Q22-landing-160000/c16-280-lidar-5 余额(元) 实得 -6870.80                     期望 -6870.80             OK (预算−裸车−购置税，未扣保险)
+B01-landing-140000 候选集合            实得 ['c10-290-zx', 'c10-660-zx'] 期望 ['c10-290-zx', 'c10-660-zx'] OK (精确比较集合，不只看个数)
+B01-landing-140000/c10-290-lidar 购置税(元) 实得 6008.85                      期望 6008.85              OK (独立算式 含税÷1.13×5%)
+B01-landing-140000/c10-290-lidar 余额(元) 实得 -1808.85                     期望 -1808.85             OK (预算−裸车−购置税，未扣保险)
+B07-ceiling-130000 裸车上限(元)         实得 124491.53                    期望 124491.53            OK (13 万落地 → 裸车约 12.45 万)
+Q21-price-150000 撤销过滤后只增不减         实得 []                           期望 []                   OK (基线 Q18-price-150000 必须包含分支全部候选)
+Q21-landing-150000 撤销过滤后只增不减       实得 []                           期望 []                   OK (基线 Q18-landing-150000 必须包含分支全部候选)
+Q22-price-160000 撤销过滤后只增不减         实得 []                           期望 []                   OK (基线 Q22-baseline-price-160000 必须包含分支全部候选)
+Q22-landing-160000 撤销过滤后只增不减       实得 []                           期望 []                   OK (基线 Q22-baseline-landing-160000 必须包含分支全部候选)
+A05 含税33.9万 实缴(元)                  实得 15000.00                     期望 15000                OK 
+A05 含税56.5万 实缴(元)                  实得 35000.00                     期望 35000                OK 
+A05 含税56.5万 原税(元)                  实得 50000.00                     期望 50000                OK 
+A05 未触顶时实缴=原税一半                    实得 5566.37                      期望 5566.37              OK 
+A05 33.9万 判定=恰好触顶                  实得 exact                        期望 exact                OK 
+A05 33.9万 实缴仍等于半额                  实得 30000.00                     期望 30000.00             OK (原税恰 3 万，两算式同值)
+A05 56.5万 判定=封顶生效                  实得 capped                       期望 capped               OK 
+A05 12.58万 判定=未触顶                  实得 none                         期望 none                 OK 
+A06 2027-12-31 在窗口内                实得 True                         期望 True                 OK 
+A06 2028-01-01 不在窗口内               实得 False                        期望 False                OK 
+A06 非法日期被拒绝                        实得 True                         期望 True                 OK 
+A10 距离<可用续航                        实得 0                            期望 0                    OK 
+A10 距离=可用续航                        实得 0                            期望 0                    OK 
+A10 距离=2倍续航                        实得 1                            期望 1                    OK 
+断言 62 条，失败 0 条
+A-TESTS: PASS
+
+$ python docs/evidence/reproduce-v0.5.2-checker.py
+基线：无错误
+
+1 负座位数（-3）                             拦住
+    - 记录#219(c16-630-zx-6/seats) 字段 seats 超出合理范围 2–9：-3
+    - 用例 Q19-price-170000 合格集合不符：算得 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6']，预期 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6', 'c16-630-zx-6']
+    - 用例 Q19-landing-170000 合格集合不符：算得 ['c16-280-zx-6']，预期 ['c16-280-zx-6', 'c16-630-zx-6']
+
+2 非数值电池容量（'四十一点七'）                     拦住
+    - 记录#64(c11-300-lidar/battery_capacity) 字段 battery_capacity 必须是数值，实际 '四十一点七'
+
+3 非法日期 2026-99-99                      拦住
+    - 记录#2(c10-290-zx/wltc_pure_range) checked 缺失或不是合法日期：'2026-99-99'
+
+4 同版本一条记录年款改 1900                      拦住
+    - 记录#95(c11-640-zx/seats) 年款非法或超出 2024–2035：1900
+    - 记录#95(c11-640-zx/seats) 与同版本其他记录的元数据不一致：('CN', 1900, 'C11', '640 智享版', '纯电') vs ('CN', 2027, 'C11', '640 智享版', '纯电')
+
+5 重复来源 ID                              拦住
+    - 来源 id 重复：official-c10-page
+
+6 冲突主张清空                               拦住
+    - 冲突 c16-boot-6 的主张少于两条
+
+7 无关来源把间接证据抬成 direct                   拦住
+    - 记录#64(c11-300-lidar/battery_capacity) 证据等级 direct 高于覆盖该字段的来源上限 indirect（无关来源不能抬等级）
+
+8 过宽 covers：宣传页支撑低配芯片                  拦住
+    - 记录#14(c10-290-zx/adas_chip) 的来源 official-c10-page 均未声明覆盖该版本该字段（适用范围越界）
+
+9 分支用例删掉用户确认的前提                        拦住
+    - 预算用例 Q21-price-150000 标为 branch，但缺少 precondition（用户已确认的那句话）
+
+10 分支用例的基线指向不存在                        拦住
+    - 预算用例 Q22-landing-160000 的 fallback_case 'Q99-not-exist' 不存在
+
+11 基线用例被塞进推断出的过滤条件                     拦住
+    - 预算用例 Q18-landing-150000 标为 open，却带了过滤条件 {'require_lidar': True}：原题没写的硬条件不得由模型补上，应改标 branch 并写 precondition
+    - 用例 Q18-landing-150000 合格集合不符：算得 ['c10-290-lidar', 'c10-660-lidar']，预期 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx']
+    - 用例 Q18-landing-150000 的边界反例 c11-640-zx 不在该用例范围内
+
+结论：11/11 个反例被拦下
+RESULT: PASS

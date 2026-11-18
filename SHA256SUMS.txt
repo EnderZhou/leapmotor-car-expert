@@ -17,3 +17,19 @@ d9cb42ed92e1df4da6c603a6fff9e41a61e620b79101a45695e4621f2fe81d1c  packages/v0.3.
 f8fea3cf8712f833063945a73e3253bb4703091b721e7e888503384824ba90b4  packages/v0.4.0/leapmotor-car-expert.zip
 51296270a37b180ab00eb356b938ce0bf7e4f6f92cb7f8eeae4b8a1456448b14  packages/v0.4.0/leapmotor-car-expert-workbuddy-skill.zip
 22696c4ea66e947dfd0f18738a952de9bd4bd3066f0b560b2e484ca8a034b901  packages/v0.4.0/leapmotor-car-expert-workbuddy.zip
+# v0.5.0 — 2026-11-11
+2d7c27d23a094a073a876d4a71caeae2ac3b6c9192e44593f6492cfe9d14e07a  packages/v0.5.0/leapmotor-car-expert.zip
+0f5755918eba3b91f113542f440a2ce80f287516b8774be0f86bae0dbc76f8c6  packages/v0.5.0/leapmotor-car-expert-workbuddy-skill.zip
+f2d159561b00233dea6fb7f5cd70ad14a5747309573aa8566b9201bb4a705a65  packages/v0.5.0/leapmotor-car-expert-workbuddy.zip
+# v0.5.1 — 2026-11-11（**已作废**：包内正文按 2026-11-11 复核意见做过四处校正，请改用 v0.5.2；本段哈希仅用于识别旧产物）
+0fe0c47bb4c91890d85c07cdad148deb59de981ecdd8206877da75d62677c901  packages/v0.5.1/leapmotor-car-expert.zip
+f9dca2b0e175082dfc08c66b49d4acd3928589727485ed6726148e8b863be8fb  packages/v0.5.1/leapmotor-car-expert-workbuddy-skill.zip
+698b3bdd4c4e4bf01914bff232a23adc6910d412c1915119f677a19add464e6f  packages/v0.5.1/leapmotor-car-expert-workbuddy.zip
+# v0.5.2 — 2026-11-11（**已作废**：包内正文按 v0.5.2 复核意见做过三处校正与一处删除，请改用 v0.5.3；本段哈希仅用于识别旧产物）
+ec937506ffe95caef6d022d33507e46ce4f37d7552c66c92cab0d9127e4543d1  packages/v0.5.2/leapmotor-car-expert.zip
+84dc680c4c4315b4c545d9044a8369ebee25624c2cd1642dca857f4ce0e0ced3  packages/v0.5.2/leapmotor-car-expert-workbuddy-skill.zip
+81dd4a3f0a2303a72fce0d5cb47a3d38a88f0ff741c00754928ba294f4aa25bc  packages/v0.5.2/leapmotor-car-expert-workbuddy.zip
+# v0.5.3 — 2026-11-11（当前版本）
+cd68532c576e41002e5149799059c72614d2968f4627f4c33d7b6c8b3e55e8d9  packages/v0.5.3/leapmotor-car-expert.zip
+7342fe37ab754ca548471a8f8b252762c0d797c0f7ed1335e444f8c8cbf9fef3  packages/v0.5.3/leapmotor-car-expert-workbuddy-skill.zip
+225281bc62417cc6fbc7a3ab9abf4a6d5e9d4c91597b42fd5c6fed6223a46eb6  packages/v0.5.3/leapmotor-car-expert-workbuddy.zip

@@ -1,8 +1,8 @@
 {
   "display_name": "零跑汽车专家 Skill",
   "display_name_en": "Leapmotor Expert Skill",
-  "description_zh": "查零跑车型与配置，比较年款版本差异与差价构成，按预算和补能条件整理选车候选，估算含购置税的落地成本并附来源。覆盖 C10、C11、C16 的 2027 款共 17 个版本。基于公开信息，非官方服务。",
-  "description_en": "Look up Leapmotor models and trims, compare versions, shortlist by budget and charging needs, estimate on-road cost including purchase tax, and prepare test-drive and order checklists with cited sources. Covers 17 China-market 2027 trims across C10, C11 and C16. Unofficial public information assistant.",
-  "version": "0.4.0",
+  "description_zh": "查零跑车型与配置，比较年款版本差异与差价构成，按预算和补能条件整理选车候选，估算含购置税的落地成本，并说明质保、保养、流量与订车交付条款及其实效。覆盖 C10、C11、C16 的 2027 款共 17 个版本。基于公开信息，非官方服务。",
+  "description_en": "Look up Leapmotor models and trims, compare versions, shortlist by budget and charging needs, estimate on-road cost including purchase tax, and explain warranty, service, data-plan and ordering terms with validity dates. Covers 17 China-market 2027 trims across C10, C11 and C16. Unofficial public information assistant.",
+  "version": "0.5.3",
   "author": "EnderZhou"
 }

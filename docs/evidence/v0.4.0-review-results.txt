@@ -1,0 +1,97 @@
+v0.4.0 复核执行记录
+复核日期：2026-11-11
+对象：D:/车联网AI/outputs/leapmotor-car-expert-v0.1，提交 48bcbf1
+执行方式：Python 3.12；事实检查器使用临时副本；未写回源数据、矩阵或安装包。
+包检查器：agent-skill-publisher/scripts/publish.py；隔离临时目录安装 PyYAML 6.0.3。
+不包含：WorkBuddy 客户端执行、25 条事实逐网页独立复核。
+来源元数据检查：38 来源、244 事实、17 版本；16 条引用 yiche-c16-config-2027，而登记中无该 ID。
+25 条来源类型程序统计：official=9, configuration=9, other_media=5, indirect=2。此为分类，不是网页支持率。
+
+NEGATIVE_TESTS [{"case": "baseline", "exit_code": 0, "result": "RESULT: PASS"}, {"case": "price_changed_to_1", "exit_code": 0, "result": "RESULT: PASS"}, {"case": "invalid_source_id", "exit_code": 0, "result": "RESULT: PASS"}, {"case": "L1_without_source", "exit_code": 0, "result": "RESULT: PASS"}, {"case": "missing_checked_date", "exit_code": 0, "result": "RESULT: PASS"}, {"case": "invalid_status", "exit_code": 0, "result": "RESULT: PASS"}, {"case": "missing_matrix", "exit_code": 0, "result": "RESULT: PASS"}, {"case": "duplicate_field_after_render", "exit_code": 0, "result": "RESULT: PASS"}]
+TAX_TABLE [{"price": "12.58", "reported": "0.5566", "expected": "0.5566", "ok": true}, {"price": "13.28", "reported": "0.5876", "expected": "0.5876", "ok": true}, {"price": "13.58", "reported": "0.6009", "expected": "0.6009", "ok": true}, {"price": "14.28", "reported": "0.6319", "expected": "0.6319", "ok": true}, {"price": "14.38", "reported": "0.6363", "expected": "0.6363", "ok": true}, {"price": "14.58", "reported": "0.6451", "expected": "0.6451", "ok": true}, {"price": "14.88", "reported": "0.6584", "expected": "0.6584", "ok": true}, {"price": "14.98", "reported": "0.6628", "expected": "0.6628", "ok": true}, {"price": "15.28", "reported": "0.6761", "expected": "0.6761", "ok": true}, {"price": "15.38", "reported": "0.6805", "expected": "0.6805", "ok": true}, {"price": "15.58", "reported": "0.6894", "expected": "0.6894", "ok": true}, {"price": "15.98", "reported": "0.7071", "expected": "0.7071", "ok": true}, {"price": "16.28", "reported": "0.7204", "expected": "0.7204", "ok": true}, {"price": "16.68", "reported": "0.7381", "expected": "0.7381", "ok": true}, {"price": "16.98", "reported": "0.7513", "expected": "0.7513", "ok": true}]
+TAX_BOUNDARY exclVAT=500000 base=50000 correct_due=35000 current_formula_due=15000
+PACKAGE leapmotor-car-expert-workbuddy-skill.zip 69247 51296270a37b180ab00eb356b938ce0bf7e4f6f92cb7f8eeae4b8a1456448b14 files 21 crc_error None
+PACKAGE leapmotor-car-expert-workbuddy.zip 90974 22696c4ea66e947dfd0f18738a952de9bd4bd3066f0b560b2e484ca8a034b901 files 25 crc_error None
+PACKAGE leapmotor-car-expert.zip 68951 f8fea3cf8712f833063945a73e3253bb4703091b721e7e888503384824ba90b4 files 21 crc_error None
+HASH_CHECKS [["packages\\leapmotor-car-expert.zip", true], ["packages\\leapmotor-car-expert-workbuddy-skill.zip", true], ["packages\\leapmotor-car-expert-workbuddy.zip", true], ["packages\\v0.2.0\\leapmotor-car-expert.zip", true], ["packages\\v0.2.0\\leapmotor-car-expert-workbuddy-skill.zip", true], ["packages\\v0.2.0\\leapmotor-car-expert-workbuddy.zip", true], ["packages\\v0.3.0\\leapmotor-car-expert.zip", true], ["packages\\v0.3.0\\leapmotor-car-expert-workbuddy-skill.zip", true], ["packages\\v0.3.0\\leapmotor-car-expert-workbuddy.zip", true], ["packages\\v0.4.0\\leapmotor-car-expert.zip", true], ["packages\\v0.4.0\\leapmotor-car-expert-workbuddy-skill.zip", true], ["packages\\v0.4.0\\leapmotor-car-expert-workbuddy.zip", true]]
+
+
+成品包结构复核：
+leapmotor-car-expert.zip exit 0
+{
+  "name": "leapmotor-car-expert",
+  "version": "0.4.0",
+  "profile": "standard",
+  "files": 21,
+  "entry": "SKILL.md",
+  "static_validation": "passed",
+  "runtime_test": "not_run",
+  "target_import": "not_verified",
+  "target_invocation": "not_verified",
+  "marketplace_publication": "not_submitted",
+  "limits": [
+    "Inline Markdown links only",
+    "No dynamic-path or runtime execution check",
+    "Secret pattern scan is not a comprehensive audit",
+    "Target platform acceptance not proven"
+  ],
+  "sha256": "f8fea3cf8712f833063945a73e3253bb4703091b721e7e888503384824ba90b4"
+}
+
+
+leapmotor-car-expert-workbuddy-skill.zip exit 0
+{
+  "name": "leapmotor-car-expert",
+  "version": "0.4.0",
+  "profile": "workbuddy",
+  "files": 21,
+  "entry": "SKILL.md",
+  "static_validation": "passed",
+  "runtime_test": "not_run",
+  "target_import": "not_verified",
+  "target_invocation": "not_verified",
+  "marketplace_publication": "not_submitted",
+  "limits": [
+    "Inline Markdown links only",
+    "No dynamic-path or runtime execution check",
+    "Secret pattern scan is not a comprehensive audit",
+    "Target platform acceptance not proven"
+  ],
+  "sha256": "51296270a37b180ab00eb356b938ce0bf7e4f6f92cb7f8eeae4b8a1456448b14"
+}
+
+
+leapmotor-car-expert-workbuddy.zip exit 0
+{
+  "name": "leapmotor-car-expert-workbuddy",
+  "version": "0.4.0",
+  "display_name_characters": {
+    "zh": 6,
+    "en": 15
+  },
+  "embedded_skills": [
+    {
+      "name": "leapmotor-car-expert",
+      "version": "0.4.0"
+    }
+  ],
+  "profile": "expert",
+  "files": 25,
+  "entry": ".codebuddy-plugin/plugin.json",
+  "static_validation": "passed",
+  "runtime_test": "not_run",
+  "target_import": "not_verified",
+  "target_invocation": "not_verified",
+  "marketplace_publication": "not_submitted",
+  "limits": [
+    "Inline Markdown links only",
+    "No dynamic-path or runtime execution check",
+    "Secret pattern scan is not a comprehensive audit",
+    "Target platform acceptance not proven"
+  ],
+  "sha256": "22696c4ea66e947dfd0f18738a952de9bd4bd3066f0b560b2e484ca8a034b901"
+}
+
+
+
+

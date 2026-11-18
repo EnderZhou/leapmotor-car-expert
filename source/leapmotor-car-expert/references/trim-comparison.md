@@ -1,99 +1,151 @@
 # 17 版本配置矩阵
 
-核对日期：2026-11-11。市场：中国。年款：2027 款（上市 2026-06-16）。
+**用法**：只放能追到来源的字段。写“未确认”是“资料未写”，不是“没有”。
 
-**本文件由 `scripts/facts.py render` 从 [`fact-records.json`](fact-records.json) 生成，请勿手改。**
-需要改数值时改脚本里的 `TRIMS`，再依次运行 `build`、`render`、`check`；`check` 会拒绝过期矩阵。
+**标记**：`†` 间接证据，`*` 媒体口径。带标记的值引用时必须一并说明，逐字段来源、状态与证据等级见 [`fact-records.json`](fact-records.json)。
 
-**用法**：这张表只放能追到来源的字段。写“未确认”不是“没有”，而是“资料未写”。逐字段来源与状态见 `fact-records.json`。
+**冲突**：数值冲突不在本表裁决，见 fact-records.json 的 `conflicts`。
 
-**冲突与未确认**：本表只列数值，不做取舍。冲突类型与处理见各车型文档的“来源冲突记录”（真冲突／口径差异／精度差异／证据不足四类）。
+**级别只作用于价格**，电池、芯片等字段各有独立状态，不继承价格级别。
 
-**价格来源级别定义**
+<!-- MATRIX:BEGIN -->
+**本区块由 `scripts/facts.py render` 从 [`fact-records.json`](fact-records.json) 生成，请勿手改。**
 
-| 级别 | 含义 |
-|---|---|
-| L1 | 官方车型页可复现，且配置库数值一致 |
-| L1* | 官方车型页曾读取到该价格，但独立复核未重现；配置库与第二来源一致支持 |
-| L2 | 仅配置库，无官方页证据 |
-| L3 | 仅经销商页或媒体 |
+核对日期：2026-11-11。市场：中国。年款：2027 款。
 
-级别只作用于价格。电池、芯片、续航等字段各有自己的状态，不能继承价格的级别。
+**读表先看标记**：`†` = 间接证据（未直读原始页面）；`*` = 媒体口径；“未确认” = 资料没写，**不等于没有**；“未决” = 来源冲突未裁决。带标记的值请在引用时一并说明，逐字段来源见 [`fact-records.json`](fact-records.json)。
 
-## C10（4 版）
+### C10（4 版）
 
-| 版本键 | 版本 | 能源 | 指导价 | 级别 | CLTC 纯电 | WLTC 纯电 | 电池 | 电机 | 快充 30–80% | 慢充 | 整备 | 0–100 | 后备箱 |
+| 版本键 | 版本 | 能源 | 指导价 | 级别 | CLTC | WLTC | 电池 | 电机 | 快充 | 慢充 | 整备 | 0–100 | 后备箱 |
 |---|---|---|---:|---|---:|---:|---:|---|---:|---:|---:|---:|---|
-| c10-290-zx | 290 智享版 | 增程 | 12.58 万 | L1 | 290 km | 190 km | 38.7 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 1995 kg | 7.38 s | 510–1809 L |
-| c10-290-lidar | 290 激光雷达版 | 增程 | 13.58 万 | L1 | 290 km | 190 km | 38.7 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 1995 kg | 7.38 s | 510–1809 L |
-| c10-660-zx | 660 智享版 | 纯电 | 13.28 万 | L1 | 660 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2040 kg | 6.02 s | 510–1809 L |
-| c10-660-lidar | 660 激光雷达版 | 纯电 | 14.28 万 | L1 | 660 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2040 kg | 6.02 s | 510–1809 L |
+| c10-290-zx | 290 智享版 | 增程 | 12.58 万 | L1 | 290 km | 190 km | 38.7 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 1995 kg | 7.38 s | 510–1809 L* |
+| c10-290-lidar | 290 激光雷达版 | 增程 | 13.58 万 | L1 | 290 km | 190 km | 38.7 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 1995 kg | 7.38 s | 510–1809 L* |
+| c10-660-zx | 660 智享版 | 纯电 | 13.28 万 | L1 | 660 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2040 kg | 6.02 s | 510–1809 L* |
+| c10-660-lidar | 660 激光雷达版 | 纯电 | 14.28 万 | L1 | 660 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2040 kg | 6.02 s | 510–1809 L* |
 
-共通：4749×1900×1680 mm，轴距 2825 mm，5 门 5 座，后置后驱；前麦弗逊、后五连杆，FSD 可变阻尼减振器。
+### C11（5 版）
 
-增程器 1.5L 95 马力；功率换算值配置库记 70 kW，官方页未列该数值，按配置库口径标注。
-
-增程综合续航：CLTC 1300 km／WLTC 1080 km（`yoojia-c10-trim-diff`）；另一来源表述为“超 1200 km”（`sina-c10-2027`）。两者不是同一个量（前者给精确值，后者给下限），按“精度差异”记录，不算真冲突。
-
-来源：`official-c10-page`（价格、800V、16 分钟）、`autohome-c10-config-2027`（续航、功率、快充、质量、加速、尺寸）、`yiche-c10-config-2027`（电池、后备箱、油箱、轴距、电耗）、`yiche-c10-review`（81.9 kWh、电耗）。
-
-## C11（5 版）
-
-| 版本键 | 版本 | 能源 | 指导价 | 级别 | CLTC 纯电 | 电池 | 电机 | 快充 30–80% | 慢充 | 整备 | 0–100 | 后备箱 | 最高车速 |
+| 版本键 | 版本 | 能源 | 指导价 | 级别 | CLTC | 电池 | 电机 | 快充 | 慢充 | 整备 | 0–100 | 后备箱 | 轴距 |
 |---|---|---|---:|---|---:|---:|---|---:|---:|---:|---:|---|---:|
-| c11-300-lidar | 300 激光雷达版 | 增程 | 14.38 万 | L1* | 300 km | 41.7 kWh | 200 kW／320 N·m | 约 18 分钟 | 4.0 h | 2090 kg | 7.60 s | 485–1151 L | 170 km/h |
-| c11-300-zun | 300 激光雷达智尊版 | 增程 | 15.38 万 | L1* | 300 km | 41.7 kWh | 200 kW／320 N·m | 约 18 分钟 | 4.0 h | 2090 kg | 7.60 s | 485–1151 L | 170 km/h |
-| c11-640-zx | 640 智享版 | 纯电 | 14.38 万 | L1 | 640 km | 81.9 kWh | 220 kW／360 N·m | 约 16 分钟 | 7.5 h | 2110 kg | 6.10 s | 537–1203 L | 190 km/h |
-| c11-640-lidar | 640 激光雷达版 | 纯电 | 14.98 万 | L1 | 640 km | 81.9 kWh | 220 kW／360 N·m | 约 16 分钟 | 7.5 h | 2110 kg | 6.10 s | 537–1203 L | 190 km/h |
-| c11-640-zun | 640 激光雷达智尊版 | 纯电 | 15.98 万 | L1 | 640 km | 81.9 kWh | 220 kW／360 N·m | 约 16 分钟 | 7.5 h | 2110 kg | 6.10 s | 537–1203 L | 190 km/h |
+| c11-300-lidar | 300 激光雷达版 | 增程 | 14.38 万† | L1* | 300 km† | 41.7 kWh† | 200 kW／320 N·m† | 约 18 分钟† | 4 h† | 2090 kg† | 7.6 s† | 485–1151 L† | 2930 mm |
+| c11-300-zun | 300 激光雷达智尊版 | 增程 | 15.38 万† | L1* | 300 km† | 41.7 kWh† | 200 kW／320 N·m† | 约 18 分钟† | 4 h† | 2090 kg† | 7.6 s† | 485–1151 L† | 2930 mm |
+| c11-640-zx | 640 智享版 | 纯电 | 14.38 万 | L1 | 640 km† | 81.9 kWh† | 220 kW／360 N·m† | 约 16 分钟† | 7.5 h† | 2110 kg† | 6.1 s† | 未决† | 2930 mm |
+| c11-640-lidar | 640 激光雷达版 | 纯电 | 14.98 万 | L1 | 640 km† | 81.9 kWh† | 220 kW／360 N·m† | 约 16 分钟 | 7.5 h† | 2110 kg | 6.1 s | 未决† | 2930 mm |
+| c11-640-zun | 640 激光雷达智尊版 | 纯电 | 15.98 万 | L1 | 640 km† | 81.9 kWh† | 220 kW／360 N·m† | 约 16 分钟 | 7.5 h† | 2110 kg | 6.1 s | 未决† | 2930 mm |
 
-共通：4780×1905×1658 mm，轴距 2930 mm，5 门 5 座，后置后驱；前双叉臂、后五连杆；纯电 800V、峰值 250 kW、纯电版全系热泵。
+### C16（8 版）
 
-增程综合续航：1220 km（`wcevcar-c11-2027`，第三方销售站，单源待核验）。增程油箱 47 L、增程器 1.5L 95 马力，功率换算值配置库记 70 kW，与 C10 同一口径问题。
+| 版本键 | 版本 | 座位 | 能源 | 指导价 | 级别 | CLTC | WLTC | 电池 | 电机 | 快充 | 慢充 | 整备 | 0–100 | 后备箱 |
+|---|---|---:|---|---:|---|---:|---:|---:|---|---:|---:|---:|---:|---|
+| c16-280-zx-5 | 280 尊享版 | 5 | 增程 | 14.58 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.3 s | 582／放倒 2077 L* |
+| c16-280-zx-6 | 280 尊享版 | 6 | 增程 | 14.88 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.3 s | 未决† |
+| c16-280-lidar-5 | 280 激光雷达智尊版 | 5 | 增程 | 15.98 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.3 s | 582／放倒 2077 L* |
+| c16-280-lidar-6 | 280 激光雷达智尊版 | 6 | 增程 | 16.28 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.3 s | 未决† |
+| c16-630-zx-5 | 630 尊享版 | 5 | 纯电 | 15.28 万 | L1 | 630 km | — | 81.9 kWh† | 230 kW／360 N·m | 约 16 分钟 | 未确认 | 2160 kg | 6.8 s | 582／放倒 2077 L* |
+| c16-630-zx-6 | 630 尊享版 | 6 | 纯电 | 15.58 万 | L1 | 630 km | — | 81.9 kWh† | 230 kW／360 N·m | 约 16 分钟 | 未确认 | 2160 kg | 6.8 s | 未决† |
+| c16-630-lidar-5 | 630 激光雷达智尊版 | 5 | 纯电 | 16.68 万 | L1 | 630 km | — | 81.9 kWh† | 230 kW／360 N·m | 约 16 分钟 | 未确认 | 2160 kg | 6.8 s | 582／放倒 2077 L* |
+| c16-630-lidar-6 | 630 激光雷达智尊版 | 6 | 纯电 | 16.98 万 | L1 | 630 km | — | 81.9 kWh† | 230 kW／360 N·m | 约 16 分钟 | 未确认 | 2160 kg | 6.8 s | 未决† |
 
-**证据边界**：`yiche-c11-config-2027` 的 URL 目前只到易车移动站首页，无法直达车款页；该来源承载的电池、功率、补能等字段按**间接证据**处理，已列入待补清单。
+### 字段证据提示（非直读或非确定）
 
-来源：`official-c11-page-cn`（价格、800V、250 kW、热泵、2930 mm）、`yiche-c11-config-2027`（电池、功率、补能、后备箱、整备、加速，间接）、`autohome-c11-config-2027`（CLTC 640、快充 0.27 h、尺寸；该页仅覆盖纯电）。
+下表列出主矩阵中**不能当作直读确定值**的字段。同一版本内按“证据/状态 + 来源”合并；完整逐字段来源见 [`fact-records.json`](fact-records.json)。
 
-## C16（8 版）
+| 版本键 | 字段 | 状态/证据 | 来源 |
+|---|---|---|---|
+| c10-290-zx | adas_lidar | media / direct | `yiche-c10-review`、`sina-c10-advisor` |
+| c10-290-zx | adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c10-290-zx | cltc_pure_range、wltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c10-config-2027` |
+| c10-290-zx | battery_capacity、slow_charge | confirmed / partial | `yiche-c10-config-2027` |
+| c10-290-zx | boot_capacity_l | media / partial | `yiche-c10-config-2027` |
+| c10-290-lidar | cltc_pure_range、wltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c10-config-2027` |
+| c10-290-lidar | battery_capacity、slow_charge | confirmed / partial | `yiche-c10-config-2027` |
+| c10-290-lidar | boot_capacity_l | media / partial | `yiche-c10-config-2027` |
+| c10-660-zx | adas_lidar | media / direct | `yiche-c10-review`、`sina-c10-advisor` |
+| c10-660-zx | adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c10-660-zx | cltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c10-config-2027` |
+| c10-660-zx | battery_capacity、slow_charge | confirmed / partial | `yiche-c10-config-2027` |
+| c10-660-zx | boot_capacity_l | media / partial | `yiche-c10-config-2027` |
+| c10-660-lidar | cltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c10-config-2027` |
+| c10-660-lidar | battery_capacity、slow_charge | confirmed / partial | `yiche-c10-config-2027` |
+| c10-660-lidar | boot_capacity_l | media / partial | `yiche-c10-config-2027` |
+| c11-300-lidar | adas_lidar | media / direct | `official-c11-page-cn` |
+| c11-300-lidar | guidance_price | L1* / indirect | `official-c11-page-cn`、`yiche-c11-config-2027` |
+| c11-300-lidar | cltc_pure_range、battery_capacity、seats、dimensions、motor_power_torque、fast_charge_30_80、slow_charge、curb_weight 等 9 项 | confirmed / indirect | `yiche-c11-config-2027` |
+| c11-300-lidar | boot_capacity_l | media / indirect | `yiche-c11-config-2027` |
+| c11-300-lidar | adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c11-300-zun | adas_lidar | media / direct | `official-c11-page-cn` |
+| c11-300-zun | guidance_price | L1* / indirect | `official-c11-page-cn`、`yiche-c11-config-2027` |
+| c11-300-zun | cltc_pure_range、battery_capacity、seats、dimensions、motor_power_torque、fast_charge_30_80、slow_charge、curb_weight 等 9 项 | confirmed / indirect | `yiche-c11-config-2027` |
+| c11-300-zun | boot_capacity_l | media / indirect | `yiche-c11-config-2027` |
+| c11-300-zun | adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c11-640-zx | adas_lidar | media / direct | `autohome-c11-guide-2027` |
+| c11-640-zx | cltc_pure_range、battery_capacity、seats、dimensions、motor_power_torque、fast_charge_30_80、slow_charge、curb_weight 等 9 项 | confirmed / indirect | `yiche-c11-config-2027` |
+| c11-640-zx | boot_capacity_l | conflict / indirect | —（无来源，不得作确定值） |
+| c11-640-zx | adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c11-640-lidar | cltc_pure_range、battery_capacity、motor_power_torque、slow_charge | confirmed / indirect | `yiche-c11-config-2027` |
+| c11-640-lidar | boot_capacity_l | conflict / indirect | —（无来源，不得作确定值） |
+| c11-640-lidar | seats、dimensions、fast_charge_30_80、curb_weight、accel_0_100、adas_lidar、adas_chip、adas_sensor_count | confirmed / partial | `autohome-c11-config-2027` |
+| c11-640-zun | cltc_pure_range、battery_capacity、motor_power_torque、slow_charge | confirmed / indirect | `yiche-c11-config-2027` |
+| c11-640-zun | boot_capacity_l | conflict / indirect | —（无来源，不得作确定值） |
+| c11-640-zun | seats、dimensions、fast_charge_30_80、curb_weight、accel_0_100、adas_lidar、adas_chip、adas_sensor_count | confirmed / partial | `autohome-c11-config-2027` |
+| c16-280-zx-5 | boot_capacity_l | media / direct | `sina-c16-2027` |
+| c16-280-zx-5 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-280-zx-5 | adas_lidar | media / indirect | `weixin-c16-guide` |
+| c16-280-zx-5 | adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-280-zx-5 | cltc_pure_range、wltc_pure_range、battery_capacity、seats、dimensions、motor_power_torque、fast_charge_30_80、slow_charge 等 10 项 | confirmed / partial | `autohome-c16-config-2027` |
+| c16-280-zx-6 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-280-zx-6 | boot_capacity_l | conflict / indirect | —（无来源，不得作确定值） |
+| c16-280-zx-6 | adas_lidar | media / indirect | `weixin-c16-guide` |
+| c16-280-zx-6 | adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-280-zx-6 | cltc_pure_range、wltc_pure_range、battery_capacity、seats、dimensions、motor_power_torque、fast_charge_30_80、slow_charge 等 10 项 | confirmed / partial | `autohome-c16-config-2027` |
+| c16-280-lidar-5 | boot_capacity_l | media / direct | `sina-c16-2027` |
+| c16-280-lidar-5 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-280-lidar-5 | adas_lidar、adas_chip | media / indirect | `weixin-c16-guide` |
+| c16-280-lidar-5 | adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-280-lidar-5 | cltc_pure_range、wltc_pure_range、battery_capacity、seats、dimensions、motor_power_torque、fast_charge_30_80、slow_charge 等 10 项 | confirmed / partial | `autohome-c16-config-2027` |
+| c16-280-lidar-6 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-280-lidar-6 | boot_capacity_l | conflict / indirect | —（无来源，不得作确定值） |
+| c16-280-lidar-6 | adas_lidar、adas_chip | media / indirect | `weixin-c16-guide` |
+| c16-280-lidar-6 | adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-280-lidar-6 | cltc_pure_range、wltc_pure_range、battery_capacity、seats、dimensions、motor_power_torque、fast_charge_30_80、slow_charge 等 10 项 | confirmed / partial | `autohome-c16-config-2027` |
+| c16-630-zx-5 | boot_capacity_l | media / direct | `sina-c16-2027` |
+| c16-630-zx-5 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-630-zx-5 | battery_capacity、adas_lidar | media / indirect | `weixin-c16-guide` |
+| c16-630-zx-5 | slow_charge、adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-630-zx-5 | cltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c16-config-2027` |
+| c16-630-zx-6 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-630-zx-6 | boot_capacity_l | conflict / indirect | —（无来源，不得作确定值） |
+| c16-630-zx-6 | battery_capacity、adas_lidar | media / indirect | `weixin-c16-guide` |
+| c16-630-zx-6 | slow_charge、adas_chip、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-630-zx-6 | cltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c16-config-2027` |
+| c16-630-lidar-5 | boot_capacity_l | media / direct | `sina-c16-2027` |
+| c16-630-lidar-5 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-630-lidar-5 | battery_capacity、adas_lidar、adas_chip | media / indirect | `weixin-c16-guide` |
+| c16-630-lidar-5 | slow_charge、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-630-lidar-5 | cltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c16-config-2027` |
+| c16-630-lidar-6 | wheelbase | confirmed / indirect | `weixin-c16-guide` |
+| c16-630-lidar-6 | boot_capacity_l | conflict / indirect | —（无来源，不得作确定值） |
+| c16-630-lidar-6 | battery_capacity、adas_lidar、adas_chip | media / indirect | `weixin-c16-guide` |
+| c16-630-lidar-6 | slow_charge、adas_sensor_count | unknown / indirect | —（无来源，不得作确定值） |
+| c16-630-lidar-6 | cltc_pure_range、seats、dimensions、motor_power_torque、fast_charge_30_80、curb_weight、accel_0_100 | confirmed / partial | `autohome-c16-config-2027` |
 
-| 版本键 | 版本 | 座位 | 能源 | 指导价 | 级别 | CLTC 纯电 | WLTC 纯电 | 电池 | 电机 | 快充 30–80% | 慢充 | 整备 | 0–100 |
-|---|---|---:|---|---:|---|---:|---:|---:|---|---:|---:|---:|---:|
-| c16-280-zx-5 | 280 尊享版 | 5 | 增程 | 14.58 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.30 s |
-| c16-280-zx-6 | 280 尊享版 | 6 | 增程 | 14.88 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.30 s |
-| c16-280-lidar-5 | 280 激光雷达智尊版 | 5 | 增程 | 15.98 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.30 s |
-| c16-280-lidar-6 | 280 激光雷达智尊版 | 6 | 增程 | 16.28 万 | L1 | 280 km | 185 km | 38.9 kWh | 200 kW／360 N·m | 约 16 分钟 | 3.5 h | 2120 kg | 8.30 s |
-| c16-630-zx-5 | 630 尊享版 | 5 | 纯电 | 15.28 万 | L1 | 630 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2160 kg | 6.80 s |
-| c16-630-zx-6 | 630 尊享版 | 6 | 纯电 | 15.58 万 | L1 | 630 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2160 kg | 6.80 s |
-| c16-630-lidar-5 | 630 激光雷达智尊版 | 5 | 纯电 | 16.68 万 | L1 | 630 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2160 kg | 6.80 s |
-| c16-630-lidar-6 | 630 激光雷达智尊版 | 6 | 纯电 | 16.98 万 | L1 | 630 km | — | 81.9 kWh | 230 kW／360 N·m | 约 16 分钟 | 7.5 h | 2160 kg | 6.80 s |
+### 冲突（未决，不取中值）
 
-共通：4925×1905×1770 mm，轴距 2825 mm，5 门（5 座或 2+2+2 六座），后置后驱；前麦弗逊、后五连杆，FSD 全系标配；增程 CLTC 综合 1230 km／WLTC 1000 km，V2L 3.3 kW。
+| 冲突 | 字段 | 涉及版本 | 各方主张 | 状态 |
+|---|---|---|---|---|
+| c16-boot-6 | boot_capacity_l | c16-280-zx-6、c16-280-lidar-6、c16-630-zx-6、c16-630-lidar-6 | 275 L／放倒 1066 L（`sina-c16-2027`）；209 L／放倒 1022 L（`youjia-c16-conflict-sample`） | unresolved |
+| c11-boot-纯电 | boot_capacity_l | c11-640-zx、c11-640-lidar、c11-640-zun | 537–1203 L（`autohome-c11-config-2027`）；523 L（`modiauto-c11-14799`） | unresolved |
+| c10-ar-hud | ar_hud_60in | c10-290-zx、c10-290-lidar、c10-660-zx、c10-660-lidar | 仅激光雷达版增加 60 英寸 AR-HUD（`yoojia-c10-trim-diff`、`zjchewang-c10-discount`）；全系标配 60 英寸 AR-HUD（`sina-c10-2027`）；官方页列于座舱亮点，未限定版本（`official-c10-page`） | unresolved |
 
-后备箱（未决，两源数值不一致）：6 座 275 L／放倒 1066 L、5 座 582 L／放倒 2077 L（`sina-c16-2027`）；6 座 209 L／1022 L（`youjia-c16-conflict-sample`）。属真冲突，不投票，见 [`model-c16.md`](model-c16.md)。
+### 数据完整性（程序计算）
 
-来源：`official-c16-page-cn`（八版本价格）、`autohome-c16-config-2027`（续航、电池、功率、补能、整备、加速、尺寸）、`weixin-c16-guide`（81.9 kWh、轴距、差价结构；公众号转载，原始出处未确认）、`sina-c16-2027`（轴距、后备箱、FSD）。
-
-## 矩阵完整性检查
-
-| 检查项 | 结果 |
+| 项目 | 结果 |
 |---|---|
-| 版本键唯一性 | 17 个键，无重复 |
-| 价格覆盖 | 17/17 有价格；L1 15 个，L1* 2 个 |
-| 续航覆盖 | 17/17 |
-| 电池容量 | 17/17 |
-| 座位 | 17/17（仅 C16 区分 5／6） |
-| 事实记录条数 | 244 条，其中“未确认” 22 条 |
-| 含未确认字段 | `adas_chip`、`adas_sensor_count` |
+| 版本数 | 17 |
+| 事实记录 | 261 条 |
+| 价格级别 | L1 15 个，L1* 2 个 |
+| 未确认 | 26 条 |
+| 争议未决 | 7 条（3 组冲突） |
+| 非直读证据 | 222 条 |
 
-## 仍未确认的字段
-
-| 字段 | 涉及版本 | 状态 |
-|---|---|---|
-| 辅助驾驶芯片／感知数量 | 智享版、尊享版、C11 增程 | 未确认（不是“无”） |
-| C11 增程综合续航 | c11-300-* | 单源 1220 km，待第二来源 |
-| C16 后备箱容积 | c16-*-6、c16-*-5 | 两源数值不一致，真冲突，未决 |
-| C16 是否配热泵 | 全部 C16 | 官方未提，媒体称无 |
-| C16 增程器功率数值 | c16-280-* | 仅有“95 马力”，配置库记 70 kW，未换算 |
-| 逐版本座舱配置归属 | 全部 | 见 [`trim-deltas.md`](trim-deltas.md)，仅记录有来源的差异项 |
-| 辅助驾驶交付／开通状态 | 全部 | 见 [`adas-matrix.md`](adas-matrix.md) |

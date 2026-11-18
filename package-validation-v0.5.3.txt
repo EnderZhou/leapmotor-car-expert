@@ -1,0 +1,64 @@
+零跑汽车专家 v0.5.3｜构建与结构检查记录
+日期：2026-11-11
+
+## 已生成 ZIP（位于 packages/v0.5.3/）
+
+- leapmotor-car-expert.zip — 104,398 bytes — SHA256 cd68532c576e41002e5149799059c72614d2968f4627f4c33d7b6c8b3e55e8d9
+- leapmotor-car-expert-workbuddy-skill.zip — 104,761 bytes — SHA256 7342fe37ab754ca548471a8f8b252762c0d797c0f7ed1335e444f8c8cbf9fef3
+- leapmotor-car-expert-workbuddy.zip — 126,697 bytes — SHA256 225281bc62417cc6fbc7a3ab9abf4a6d5e9d4c91597b42fd5c6fed6223a46eb6
+
+版本号变化：源码与三包均为 **0.5.3**（`SKILL.md` 的 `metadata.version`、`expert-config.json`、`workbuddy-market.json`、`fact-records.json`、`sources.json`、`budget-cases.json`、技能 `README.md` 标题、`model-index.md` 标题，共 8 处）。包内脚本扫描 `0.5.x` 版本串，**只在叙述性文字里出现旧版本号**（`README.md` 提到"v0.5.1 撤回'第二来源支持'的说法"、`ownership-and-order.md` 保留 v0.5.1／v0.5.2 的改动说明并就新增 v0.5.3 条目），这些是变更留痕，不是版本元数据，不构成"包内版本串不一致"。
+
+**v0.5.2 三包已作废。** 原因：本轮按复核意见修改了包内正文（`purchase-cost.md` 第三节整节重写、`SKILL.md` 第 4 步第 4 条与第 9 条、`answer-patterns.md` 第 4 节与权益段、`ownership-and-order.md` 1.2 节），包内容已不是 v0.5.2 那三个产物。v0.5.2 的哈希仍留在 `SHA256SUMS.txt` 里并标注作废，只用于识别旧产物，不得用于测试或分发。
+
+## 构建过程
+
+1. `publish.py check source/leapmotor-car-expert --profile standard` → `static_validation=passed`，22 文件，`version=0.5.3`。
+2. 首轮三包构建成功（标准 104,246 B／技能 104,609 B／专家 126,545 B）。
+3. **发现源码在构建后又被改过**：给 `ownership-and-order.md` 补了一条 v0.5.3 改动说明（第 9 行）。源码字节变了，**首轮三包作废并以 `--force` 重建**。
+   - 首轮哈希：标准 `5a094f9d…9a1d`、技能 `cf310208…58cd`、专家 `377c1943…bcbe`，已覆盖、不保留。
+4. 重建第二轮：三包均一次成功，无 `[WinError 32]`。上列哈希为**最终产物**。
+5. 未出现 `Output report already exists`（所有调用均带 `--force`）。
+6. 构建前检查过换行符：仓库内 `*.md/*.json/*.py/*.txt` 全部为 LF，**CRLF 文件数 0**（v0.5.2 曾因 CRLF 导致 `sha256sum -c` 失败，本轮前置检查）。
+
+## 检查结果
+
+| 阶段 | 结果 |
+|---|---|
+| 源码结构检查（profile=standard） | `static_validation=passed`，22 文件，入口 `SKILL.md`，`version=0.5.3` |
+| ZIP 回查（生成时读取产物再校验） | 三包均 `zip_readback=passed` |
+| ZIP 完整性（独立 `testzip()`） | 三包均返回 `None`（无损坏条目） |
+| 条目数 | 标准包 22、技能包 22、专家包 26 |
+| 内嵌文件一致性（逐字节 SHA256） | 标准包 **22/22** 与源码一致；专家包 `skills/leapmotor-car-expert/` **22/22** 一致；技能包 **21/22** 一致 |
+| 技能包 `SKILL.md` 差异 | 预期内，仅 frontmatter：注入 `display_name`／`display_name_en`／`description_zh`／`description_en`／`version`／`author`，`description` 折行，`version: "0.5.3"` 规范化为 `version: 0.5.3`。统一 diff 只有一个 hunk `@@ -2,7`；**去掉 frontmatter 后正文逐行相同**（脚本比对返回 True） |
+| 可疑条目扫描 | 三包均无绝对路径条目、无 `..`、无 `.workbuddy`、无嵌套 ZIP、无 `__MACOSX`、无 `.tmp`／`.log` |
+| 包内版本串 | 脚本扫描全部 `.md`／`.json`，无 `0.5.0` 残留；`0.5.1`／`0.5.2` 仅出现在变更留痕文字中（见上） |
+| SHA256 一致性 | `sha256sum -c SHA256SUMS.txt` → **24 个包全部 OK**（21 个历史包 + 3 个 v0.5.3 包），无失败行 |
+| 历史包完整性 | v0.1.0（顶层 3 包）、v0.2.0、v0.3.0、v0.4.0、v0.5.0、v0.5.1、v0.5.2 共 21 个旧包逐一复算，全部未变、未被覆盖 |
+| 事实记录校验 | `python scripts/facts.py check` → PASS（261 条记录／17 版本／3 组冲突／**16 个预算用例**／**3 个分期算例**，三个生成视图均为最新） |
+| 检查器自测 | `python scripts/facts.py selftest` → PASS（**25 行 = 23 个错误注入 + 基线 + 合法更新**） |
+| 确定性断言 | `python scripts/facts.py atest` → PASS（**83 条断言，0 失败**） |
+| 绕过反例复现 | `python docs/evidence/reproduce-v0.5.3-checker.py` → **12/12 拦下**，逐条打印拦截理由 |
+| 源码与包同步 | 构建后未再修改 `source/leapmotor-car-expert/` 任何文件；三包内嵌比对 22/22 与 21/22 如上 |
+
+## 包内资料规模
+
+- 18 个 references（本轮未增删文件）
+- `fact-records.json` 261 条记录、17 个版本（C10 4／C11 5／C16 8）、3 组冲突
+- `sources.json` 46 条来源，`read_status`：full-text 5／partial 40／blocked 1
+- `budget-cases.json` **16 个用例**：`open` 10／`stated` 2（Q19 六座）／`branch` 4（Q21、Q22 各两口径）
+- `CASHFLOW_CASES` **3 个分期算例**：`A-full-payment`／`B-deposit-and-store-fee`／`C-balloon-and-lender-fee`，每例 6 项期望值
+- 头像 `avatar.png` 12,610 bytes，SHA256 `bb81fb1d…38d72e`（与 v0.5.1／v0.5.2 相同）
+
+## 未验证（不得表述为已通过）
+
+- 未在 WorkBuddy 客户端导入任何包，未召唤专家，未做真实调用。
+- **客户端实测 0 题**：`tests/client-test-checklist-v0.5.3.md` 的首批 10 题（含 9b／9c／10b）、以及全量 8 功能＋8 安全＋3 多轮＋2 注入，均未执行。`tests/answer-samples-v0.5.3.md` 的 14 例是示范答案，不是实测记录。
+- **不发布任何通过率。**
+- 需求完成度未评估。
+- 25 个关键事实的非开发者独立复核仍未执行（`tests/independent-review-worksheet-v0.4.0.md`）。
+- 分期现金流三栏是否被模型真的分开报、有没有把已付定金又算进当天，**程序判不了**——程序只保证算例表与 `cashflow()` 一致、手改会被拦下。
+- 权益题是否先确认领取批次，**程序判不了**，只能靠客户端实测与人工审查。
+- 包内不含可执行脚本：`scripts/facts.py` 不在包内，购置税四步算式与分期分栏流程写在 `SKILL.md` 第四步第 4 条，属提示而非程序保障。
+- 未提交市场审核，未推送 Git，未创建 tag，未发布 Release。
+- 头像仅按字节数与尺寸检查，未做人工视觉复核。

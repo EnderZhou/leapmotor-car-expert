@@ -1,0 +1,85 @@
+# v0.5.1 校验与反例实录
+
+生成时间：2026-11-11 13:51:02
+工作目录：/d/车联网AI/outputs/leapmotor-car-expert-v0.1
+Python：Python 3.13.14
+
+## 1. check
+```
+记录 261 条，版本 17 个，冲突 3 组，预算用例 14 个
+视图：trim-comparison.md / purchase-cost.md 税表 / test-cases.md 预算表 均为最新
+RESULT: PASS
+```
+
+## 2. selftest
+```
+baseline                         exit=0 期望0  OK
+price_changed_to_1               exit=1 期望非0  OK
+invalid_source_id                exit=1 期望非0  OK
+L1_without_source                exit=1 期望非0  OK
+missing_checked_date             exit=1 期望非0  OK
+invalid_status                   exit=1 期望非0  OK
+missing_matrix                   exit=1 期望非0  OK
+duplicate_primary_key            exit=1 期望非0  OK
+negative_seats                   exit=1 期望非0  OK
+non_numeric_battery              exit=1 期望非0  OK
+invalid_date_99                  exit=1 期望非0  OK
+year_changed_to_1900             exit=1 期望非0  OK
+duplicate_source_id              exit=1 期望非0  OK
+conflict_claims_cleared          exit=1 期望非0  OK
+unrelated_source_boosts_rank     exit=1 期望非0  OK
+low_trim_chip_from_marketing     exit=1 期望非0  OK
+budget_case_input_changed        exit=1 期望非0  OK
+budget_case_q19_filter_changed   exit=1 期望非0  OK
+budget_case_expected_tampered    exit=1 期望非0  OK
+legal_update_after_render        exit=0 期望0  OK
+场景合计 20 个：错误注入 18 个 + 基线 1 个 + 合法更新 1 个
+SELFTEST: PASS
+```
+
+## 3. atest
+```
+A06 2027-12-31 在窗口内                实得 True                         期望 True                 OK 
+A06 2028-01-01 不在窗口内               实得 False                        期望 False                OK 
+A06 非法日期被拒绝                        实得 True                         期望 True                 OK 
+A10 距离<可用续航                        实得 0                            期望 0                    OK 
+A10 距离=可用续航                        实得 0                            期望 0                    OK 
+A10 距离=2倍续航                        实得 1                            期望 1                    OK 
+断言 48 条，失败 0 条
+A-TESTS: PASS
+```
+
+## 4. 复核清单 P1-2 的 8 个反例
+```
+基线：无错误
+
+1 负座位数（-3）                             拦住
+    - 记录#219(c16-630-zx-6/seats) 字段 seats 超出合理范围 2–9：-3
+    - 用例 Q19-price-170000 合格集合不符：算得 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6']，预期 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6', 'c16-630-zx-6']
+    - 用例 Q19-landing-170000 合格集合不符：算得 ['c16-280-zx-6']，预期 ['c16-280-zx-6', 'c16-630-zx-6']
+
+2 非数值电池容量（'四十一点七'）                     拦住
+    - 记录#64(c11-300-lidar/battery_capacity) 字段 battery_capacity 必须是数值，实际 '四十一点七'
+
+3 非法日期 2026-99-99                      拦住
+    - 记录#2(c10-290-zx/wltc_pure_range) checked 缺失或不是合法日期：'2026-99-99'
+
+4 同版本一条记录年款改 1900                      拦住
+    - 记录#95(c11-640-zx/seats) 年款非法或超出 2024–2035：1900
+    - 记录#95(c11-640-zx/seats) 与同版本其他记录的元数据不一致：('CN', 1900, 'C11', '640 智享版', '纯电') vs ('CN', 2027, 'C11', '640 智享版', '纯电')
+
+5 重复来源 ID                              拦住
+    - 来源 id 重复：official-c10-page
+
+6 冲突主张清空                               拦住
+    - 冲突 c16-boot-6 的主张少于两条
+
+7 无关来源把间接证据抬成 direct                   拦住
+    - 记录#64(c11-300-lidar/battery_capacity) 证据等级 direct 高于覆盖该字段的来源上限 indirect（无关来源不能抬等级）
+
+8 过宽 covers：宣传页支撑低配芯片                  拦住
+    - 记录#14(c10-290-zx/adas_chip) 的来源 official-c10-page 均未声明覆盖该版本该字段（适用范围越界）
+
+结论：8/8 个反例被拦下
+RESULT: PASS
+```

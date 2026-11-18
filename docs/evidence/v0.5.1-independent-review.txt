@@ -1,0 +1,42 @@
+v0.5.1 独立复验
+日期：2026-11-11
+范围：当前本地未提交工作区与 packages/v0.5.1。
+未修改产品源文件、测试预期或包。以下为执行输出，无客户端模型输出。
+
+undefined
+
+独立算术复核：
+INDEPENDENT_BUDGET_CASES 14 MISMATCHES []
+CAP_BOUNDARY original_tax=30000 reduction=15000 due=15000 equal_to_half=True
+CASHFLOW_COUNTEREXAMPLE hypothetical_vehicle_price=200000 down_payment=60000 loan_disbursed=140000 fees=0 initial_cash=60000 current_table_sums=200000
+FILE tests/answer-samples-v0.5.1.md
+97 > 关键是看门店类型：零跑的门店分**体验中心、服务中心、交付中心**三种，一家店可以同时是几种。**只有带"服务中心"的才能做保养和保修**，体验中心只能看车、试驾、下订。
+105 **不该怎么答**：只说"滨江有两家零跑店"（那两家不能保养）；给门店电话号码（本库无法确认有效号码）。
+117 > 能确定的：零跑门店分体验中心／服务中心／交付中心，**只有带"服务中心"的能做保养保修**。所以你要找的不是"最近的零跑店"，是"最近**带服务中心**的零跑店"。
+175 > **硬件**：激光雷达版确实有激光雷达和 8650 芯片，这个官方页写明了。
+FILE source/leapmotor-car-expert/SKILL.md
+53    - **自检**：算出的减税额若等于 15,000，说明已触顶，实缴 = 原税 − 15,000，**不是**原税的一半；若小于 15,000，实缴应恰为原税的一半。
+FILE source/leapmotor-car-expert/references/purchase-cost.md
+83 **这张表只算"当期现金支出"，不含全期利息。** 四个数不能混成一个，必须分开报：
+87 | **① 当期现金支出** | 上表各项相加；后返补贴不计入 | 回答"提车那天要准备多少钱" |
+88 | **② 全期还款** | 首付 + 月供 × 期数 + 尾款 + 手续费 | 回答"贷款一共还多少" |
+92 **禁止**：把"全期利息"放进"当期现金支出"；把"裸车价 + 全期贷款利息"标成"落地价"；把未到账的补贴从任何一栏里扣掉。
+FILE source/leapmotor-car-expert/references/budget-cases.json
+210         "require_lidar": true
+233         "require_lidar": true
+259       "label": "裸车 16 万、只看 C16",
+285       "label": "落地 16 万、只看 C16",
+
+
+包结构检查：
+standard/workbuddy/expert 均以 agent-skill-publisher/scripts/publish.py 对实际ZIP执行check，返回码0，文件数22/22/26，static_validation=passed。
+与源码逐文件匹配；WorkBuddy技能包只允许frontmatter适配差异，正文一致。
+
+UI实测前置检查：
+WorkBuddy.WorkBuddy，返回1个窗口，id=131462，app=process:D:\Programs\WorkBuddy\WorkBuddy.exe。
+首次读取返回 window is minimized。
+尝试activate_window、重新get_window后，get_window_state返回 no screenshot targets found for process:D:\Programs\WorkBuddy\WorkBuddy.exe。
+未导入、未提问，客户端实测仍为0题。
+
+复核辅助脚本初次执行因多余右括号产生SyntaxError，改正后成功执行；上方独立算术复核是改正后输出。
+

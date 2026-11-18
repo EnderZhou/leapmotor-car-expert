@@ -1,0 +1,88 @@
+v0.5.0 独立复核执行摘要
+日期：2026-11-11
+对象：D:/车联网AI/outputs/leapmotor-car-expert-v0.1 当前未提交的 v0.5.0 工作区
+Git HEAD：48bcbf1；不将 HEAD 误称为 v0.5.0 提交
+运行环境：Python 3.12；ZIP 静态检查使用隔离临时 PyYAML 6.0.3
+
+一、项目测试、额外 validate 反例及哈希检查
+COMMAND check EXIT 0
+记录 261 条，版本 17 个，冲突 3 组
+视图：trim-comparison.md / purchase-cost.md 税表 均为最新
+RESULT: PASS
+
+
+COMMAND selftest EXIT 0
+baseline                     exit=0 期望0  OK
+price_changed_to_1           exit=1 期望非0  OK
+invalid_source_id            exit=1 期望非0  OK
+L1_without_source            exit=1 期望非0  OK
+missing_checked_date         exit=1 期望非0  OK
+invalid_status               exit=1 期望非0  OK
+missing_matrix               exit=1 期望非0  OK
+duplicate_primary_key        exit=1 期望非0  OK
+legal_update_after_render    exit=0 期望0  OK
+SELFTEST: PASS
+
+
+COMMAND atest EXIT 0
+A01 裸车14万合格候选数                     实得 3            期望 3            OK (不得含 c10-660-lidar 14.28；C11 最低 14.38 也已超)
+A01 c10-660-lidar 是否被排除            实得 True         期望 True         OK 
+A02 15.28万@16万落地 余额(元)             实得 438.94       期望 439          OK 
+A03 14.88 余额 > 15.28 余额            实得 True         期望 True         OK (同一税费假设下不得排除便宜项而接受贵项)
+A04 13.28万@14万落地 余额(元)             实得 1323.89      期望 1324         OK (任务书写 844，与算式差 480，见报告)
+A05 含税33.9万 实缴(元)                  实得 15000.00     期望 15000        OK 
+A05 含税56.5万 实缴(元)                  实得 35000.00     期望 35000        OK 
+A05 不含税50万 原税(元)                   实得 50000.00     期望 50000        OK 
+A06 2027-12-31 开票适用                实得 True         期望 True         OK 
+A06 2028-01-01 开票不适用               实得 False        期望 False        OK 
+A10 距离<可用续航 补能次数                   实得 0            期望 0            OK 
+A10 距离=可用续航 补能次数                   实得 0            期望 0            OK 
+A10 距离=2倍续航 补能次数                   实得 1            期望 1            OK 
+A-TESTS: PASS
+
+
+COUNTS 261 46 {'direct': 39, 'partial': 126, 'indirect': 96}
+EXTRA_NEGATIVE seat_count_negative ACCEPTED []
+EXTRA_NEGATIVE battery_text ACCEPTED []
+EXTRA_NEGATIVE invalid_calendar_date ACCEPTED []
+EXTRA_NEGATIVE year_changed_one_record ACCEPTED []
+EXTRA_NEGATIVE mixed_source_upgrade ACCEPTED []
+EXTRA_NEGATIVE duplicate_source_id ACCEPTED []
+EXTRA_NEGATIVE unsupported_lidar_assigned_low_trim ACCEPTED []
+EXTRA_NEGATIVE conflict_no_claim_sources ACCEPTED []
+A04 independent 1323.89
+TAX_BAD_DATE True
+PACKAGE leapmotor-car-expert-workbuddy-skill.zip 88001 0f5755918eba3b91f113542f440a2ce80f287516b8774be0f86bae0dbc76f8c6 21 None
+PACKAGE leapmotor-car-expert-workbuddy.zip 109887 f2d159561b00233dea6fb7f5cd70ad14a5747309573aa8566b9201bb4a705a65 25 None
+PACKAGE leapmotor-car-expert.zip 87643 2d7c27d23a094a073a876d4a71caeae2ac3b6c9192e44593f6492cfe9d14e07a 21 None
+HASHCHECK 15 15
+
+
+二、临时目录完整流程反例（原始仓库未改）
+negative_seats_rendered validation_errors 0 check_exit 0 RESULT: PASS
+indirect_upgraded_by_unrelated_source validation_errors 0 check_exit 0 RESULT: PASS
+low_trim_chip_overreach validation_errors 0 check_exit 0 RESULT: PASS
+REVIEWED_FILE_SHA256 scripts/facts.py 49aeba30efacc6c2d98f2cb838f8c4f3472fcaf7dbc7b20ddc8a3a1794860c88
+REVIEWED_FILE_SHA256 test-cases.md df970532186710959fb012a6c5a281be2073b14803c08ce6b6d0e88b578d5bcb
+REVIEWED_FILE_SHA256 source/leapmotor-car-expert/references/fact-records.json 67a4c9ba386ee8c2f5212ee69d5527dcd5bf100de303411a8350e3a2bea5851f
+REVIEWED_FILE_SHA256 source/leapmotor-car-expert/references/sources.json 546c30d56e576434b395ca69d89f7590553970ae123a179104bfa8e8c1b4d973
+
+
+三、官方 PDF 直接下载元数据
+PDF_HTTP 200 bytes 396119 sha256 05c319375ddaf3944ea38be130b06dcd961fb8751c17e83c9dfad4893286a90d last_modified Tue, 18 Oct 2022 06:45:55 GMT
+PAGES 9 METADATA {'/Author': 'Frank', '/Creator': 'Microsoft® Word 2019', '/CreationDate': "D:20221014112724+08'00'", '/ModDate': "D:20221014112724+08'00'", '/Producer': 'Microsoft® Word 2019'}
+
+正文未给出 2027 款适用说明。本记录只确认来源文件与哈希，不确认当期条款适用性。
+网页工具另读取微信公众号失败；门店页无可读正文。未将这些项目计为本次独立核验通过。
+
+四、成品包静态检查
+实际调用 agent-skill-publisher/scripts/publish.py check --profile standard/workbuddy/expert：
+三包返回码均为 0，static_validation=passed，文件数 21/21/25。
+三个包内的 .py 文件列表均为空；尚无客户端计算器调用验证。
+客户端运行、25 条事实逐条网页独立核验均未执行。
+
+五、预算独立计算（元，仅扣裸车与税）
+预算150000：125800→18633.63；132800→11323.89；135800→8191.15；142800→881.42；143800→-162.83；145800→-2251.33；148800→-5384.07；149800→-6428.32。
+预算170000：148800→14615.93；155800→7306.19；162800→-3.54；169800→-7313.27。
+预算140000：132800→1323.89。上轮复核者的844元错误已明确更正，不是来源冲突。
+

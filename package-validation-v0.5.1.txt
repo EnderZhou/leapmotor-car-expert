@@ -1,0 +1,56 @@
+零跑汽车专家 v0.5.1｜构建与结构检查记录
+日期：2026-11-11
+
+## 已生成 ZIP（位于 packages/v0.5.1/）
+
+- leapmotor-car-expert.zip — 97,041 bytes — SHA256 0fe0c47bb4c91890d85c07cdad148deb59de981ecdd8206877da75d62677c901
+- leapmotor-car-expert-workbuddy-skill.zip — 97,405 bytes — SHA256 f9dca2b0e175082dfc08c66b49d4acd3928589727485ed6726148e8b863be8fb
+- leapmotor-car-expert-workbuddy.zip — 119,341 bytes — SHA256 698b3bdd4c4e4bf01914bff232a23adc6910d412c1915119f677a19add464e6f
+
+版本号变化：源码与三包均为 **0.5.1**（`SKILL.md` 的 `metadata.version`、`expert-config.json`、`workbuddy-market.json` 三处同步）。
+
+## 构建过程（含一次失败，如实记录）
+
+1. `publish.py check source/leapmotor-car-expert --profile standard` → `static_validation=passed`，**22 文件**（v0.5.0 为 21 文件，新增 `references/budget-cases.json`）。
+2. 标准包：`package … --profile standard` → 一次成功，`zip_readback=passed`。
+3. WorkBuddy 技能包：`package … --profile workbuddy --metadata workbuddy-market.json` → 一次成功。
+4. 专家包：**首次失败**。我把头像参数写成了 `source/leapmotor-car-expert/../../avatars/expert.png`（凭印象猜的路径），报 `[Errno 2] No such file or directory`。实际头像在 `source/leapmotor-car-expert/avatar.png`（12,610 bytes，SHA256 bb81fb1d…38d72e），改对路径后成功。
+5. 首轮三包生成后，发现包内还有 4 处版本号仍是 `0.5.0`（`source/leapmotor-car-expert/README.md` 标题、`model-index.md` 标题、`fact-records.json` 与 `sources.json` 的 `version` 字段）。这 4 个文件都在包内，**因此三个包以 `--force` 全部重建一次**。上列哈希为**最终产物**；首轮产物已覆盖，不再保留（首轮哈希：标准包 6a22eafe…49fd、技能包 e19ade40…13ed、专家包 46ac7e6d…b88e）。
+6. 重建时首次调用报 `Output report already exists`（`.report.json` 已存在），改用 `--force` 后成功。
+
+## 检查结果
+
+| 阶段 | 结果 |
+|---|---|
+| 源码结构检查（profile=standard） | `static_validation=passed`，22 文件，入口 `SKILL.md`，version 0.5.1 |
+| ZIP 回查（生成时读取产物再校验） | 三包均 `zip_readback=passed` |
+| 成品 ZIP 独立复检 | 标准包、技能包：`static_validation=passed`、version 0.5.1、22 文件 |
+| 专家包结构 | 26 个条目：`.codebuddy-plugin/plugin.json`、`README.md`、`agents/leapmotor-car-expert-workbuddy.md`、`avatars/expert.png`、`skills/leapmotor-car-expert/`（22 文件）。`publish.py check` 对专家包报 `SKILL.md must be at the package root`——该命令只认平铺式技能包，专家包是嵌套结构，因此改用**条目清点＋逐字节比对**验收（与 v0.4.0／v0.5.0 处理一致） |
+| 内嵌文件一致性（逐字节 SHA256） | 标准包 22/22 与源码一致；专家包 `skills/leapmotor-car-expert/` 22/22 一致；技能包 21/22 一致 |
+| 技能包 `SKILL.md` 差异 | 预期内，仅 frontmatter：注入 `display_name`／`display_name_en`／`description_zh`／`description_en`／`version`／`author`，`description` 折行，`version: "0.5.1"` 规范化为 `version: 0.5.1`。统一 diff 共 25 行，三个 hunk 全部在 `@@ -3`／`-6`／`-7`，即文件头部；**正文无差异** |
+| 可疑条目扫描 | 三包均无绝对路径条目、无 `..`、无 `.workbuddy`、无嵌套 ZIP、无 `__MACOSX`、无 `.tmp`／`.log` |
+| 包内 README 版本 | 技能 README 标题已核对 |
+| SHA256 一致性 | 与 `SHA256SUMS.txt` v0.5.1 段一致；`sha256sum -c SHA256SUMS.txt` → **18 个包全部 OK**，无失败行 |
+| 历史包完整性 | v0.1.0（顶层 3 包）、v0.2.0、v0.3.0、v0.4.0、v0.5.0 共 15 个历史包逐一复算，全部未变、未被覆盖 |
+| 事实记录校验 | `python scripts/facts.py check` → PASS（261 条记录、17 个版本、3 组冲突、**14 个预算用例**、三个生成视图均为最新） |
+| 检查器自测 | `python scripts/facts.py selftest` → PASS（**20 行＝18 个错误注入＋基线＋合法更新**） |
+| 确定性断言 | `python scripts/facts.py atest` → PASS（**48 条断言，0 失败**） |
+| 绕过反例复现 | `python docs/evidence/reproduce-v0.5.1-checker.py` → **8/8 拦下**，逐条打印拦截理由 |
+
+## 包内资料规模
+
+- 18 个 references（v0.5.0 为 17 个，新增 `budget-cases.json`）
+- `fact-records.json` 261 条记录、17 个版本（C10 4／C11 5／C16 8）、3 组冲突
+- `sources.json` 46 条来源，`read_status`：full-text 5／partial 40／blocked 1
+- `budget-cases.json` 14 个用例（Q17–Q22 各两口径＋B01＋B07）
+
+## 未验证（不得表述为已通过）
+
+- 未在 WorkBuddy 客户端导入技能包或专家包，未召唤专家，未做任何真实调用。
+- **客户端实测 0 题**：`tests/client-test-checklist-v0.5.1.md` 的「首批 8 题」与全量 8 功能＋8 安全＋3 多轮＋2 注入均未执行；`tests/answer-samples-v0.5.1.md` 的 14 例只是示范答案，不是实测记录。
+- **不发布任何通过率**：v0.4.0 的 80/80 与 84.6% 已撤回，v0.5.1 不产生新数字。
+- 需求完成度未评估。
+- 25 个关键事实的非开发者独立复核仍未执行（`tests/independent-review-worksheet-v0.4.0.md`）。
+- 包内不含可执行脚本：`scripts/facts.py` 不在包内，购买税的算式与手算流程写在 `SKILL.md` 第四步第 4 条，**属于提示而非程序保障**。
+- 未提交市场审核，未推送 Git，未创建 tag，未发布 Release。
+- 头像仅按字节数与尺寸检查，未做人工视觉复核。

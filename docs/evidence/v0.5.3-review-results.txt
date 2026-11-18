@@ -1,0 +1,215 @@
+# v0.5.3 数据校验实录（本机，2026-11-11）
+
+**这是什么**：把 v0.5.3 的 `check`／`selftest`／`atest`／12 个绕过反例／24 包哈希逐条跑一遍并留原文输出。
+**这不代表模型回答通过。** 客户端实测 0 题，指标三仍未执行；本文件只支撑"指标一 数据校验"。
+
+复现环境：Windows，Python 3，仓库根目录 `D:/车联网AI/outputs/leapmotor-car-expert-v0.1`。
+
+---
+
+## 1. 事实记录与视图同步
+
+```
+$ python scripts/facts.py check
+记录 261 条，版本 17 个，冲突 3 组，预算用例 16 个，分期算例 3 个
+视图：trim-comparison.md / purchase-cost.md 税表＋分期算例 / test-cases.md 预算表 均为最新
+RESULT: PASS
+```
+
+判读：`261` 条记录、`17` 个版本、`3` 组冲突、`16` 个预算用例、`3` 个分期算例；三个生成视图（配置矩阵／税表＋分期算例／预算表）与算法输出逐字符一致，无"过期视图"。
+
+---
+
+## 2. 检查器自测（25 行）
+
+```
+$ python scripts/facts.py selftest
+baseline                         exit=0 期望0  OK
+price_changed_to_1               exit=1 期望非0  OK
+invalid_source_id                exit=1 期望非0  OK
+L1_without_source                exit=1 期望非0  OK
+missing_checked_date             exit=1 期望非0  OK
+invalid_status                   exit=1 期望非0  OK
+missing_matrix                   exit=1 期望非0  OK
+duplicate_primary_key            exit=1 期望非0  OK
+negative_seats                   exit=1 期望非0  OK
+non_numeric_battery              exit=1 期望非0  OK
+invalid_date_99                  exit=1 期望非0  OK
+year_changed_to_1900             exit=1 期望非0  OK
+duplicate_source_id              exit=1 期望非0  OK
+conflict_claims_cleared          exit=1 期望非0  OK
+unrelated_source_boosts_rank     exit=1 期望非0  OK
+low_trim_chip_from_marketing     exit=1 期望非0  OK
+budget_case_input_changed        exit=1 期望非0  OK
+budget_case_q19_filter_changed   exit=1 期望非0  OK
+budget_case_expected_tampered    exit=1 期望非0  OK
+branch_precondition_removed      exit=1 期望非0  OK
+branch_fallback_missing          exit=1 期望非0  OK
+cashflow_table_hand_edited       exit=1 期望非0  OK
+cashflow_expected_missing        exit=1 期望非0  OK
+open_case_gains_filter           exit=1 期望非0  OK
+legal_update_after_render        exit=0 期望0  OK
+场景合计 25 个：错误注入 23 个 + 基线 1 个 + 合法更新 1 个
+SELFTEST: PASS
+```
+
+判读：`25 行 = 23 个错误注入 + 1 个基线 + 1 个合法更新`。本轮新增两个：
+
+- `cashflow_table_hand_edited`：把 `purchase-cost.md` 分期算例表里 B 例的 ② 当天尚需从 `58,000` 手改成 `60,000`（等于把已付定金又算进当天），必须非零退出。
+- `cashflow_expected_missing`：把某例的 `expected` 整块删掉。**这一例是为堵一个自查出的漏洞**——A 例（全款）最初只写了 `inputs`、没写 `expected`，而 `validate_cashflow` 里 `if not exp: continue` 把它整个跳过：表里看得见、断言里没有，等于"未验证却计入算例数"。现在六个字段缺一个就判失败，注入证明守卫生效。
+
+---
+
+## 3. 确定性断言（83 条）
+
+```
+$ python scripts/facts.py atest
+...（逐行输出略，见下方统计）
+```
+
+末尾两行：
+
+```
+断言 83 条，失败 0 条
+A-TESTS: PASS
+```
+
+判读：本轮新增 21 条（62 → 83）＝ 3 个分期算例 × 6 个字段（18 条）＋ 3 条"⑤ 对贷款方累计付款已含当日费"的独立性断言。
+
+---
+
+## 4. 12 个绕过反例
+
+```
+$ python docs/evidence/reproduce-v0.5.3-checker.py
+基线：通过，无错误
+
+1 负座位数（-3）                               拦住
+    - 记录#219(c16-630-zx-6/seats) 字段 seats 超出合理范围 2–9：-3
+    - 用例 Q19-price-170000 合格集合不符：算得 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6']，预期 ['c16-280-lidar-6', 'c16-280-zx-6', 'c16-630-lidar-6', 'c16-630-zx-6']
+    - 用例 Q19-landing-170000 合格集合不符：算得 ['c16-280-zx-6']，预期 ['c16-280-zx-6', 'c16-630-zx-6']
+
+2 非数值电池容量（'四十一点七'）                       拦住
+    - 记录#64(c11-300-lidar/battery_capacity) 字段 battery_capacity 必须是数值，实际 '四十一点七'
+    - trim-comparison.md 与事实数据不同步，运行 render 重新生成
+
+3 非法日期 2026-99-99                        拦住
+    - 记录#2(c10-290-zx/wltc_pure_range) checked 缺失或不是合法日期：'2026-99-99'
+
+4 同版本一条记录年款改 1900                        拦住
+    - 记录#95(c11-640-zx/seats) 年款非法或超出 2024–2035：1900
+    - 记录#95(c11-640-zx/seats) 与同版本其他记录的元数据不一致：('CN', 1900, 'C11', '640 智享版', '纯电') vs ('CN', 2027, 'C11', '640 智享版', '纯电')
+
+5 重复来源 ID                                拦住
+    - 来源 id 重复：official-c10-page
+
+6 冲突主张清空                                 拦住
+    - 冲突 c16-boot-6 的主张少于两条
+    - trim-comparison.md 与事实数据不同步，运行 render 重新生成
+
+7 无关来源把间接证据抬成 direct                     拦住
+    - 记录#64(c11-300-lidar/battery_capacity) 证据等级 direct 高于覆盖该字段的来源上限 indirect（无关来源不能抬等级）
+    - trim-comparison.md 与事实数据不同步，运行 render 重新生成
+
+8 过宽 covers：宣传页支撑低配芯片                    拦住
+    - 记录#14(c10-290-zx/adas_chip) 的来源 official-c10-page 均未声明覆盖该版本该字段（适用范围越界）
+    - trim-comparison.md 与事实数据不同步，运行 render 重新生成
+
+9 分支用例删掉用户确认的前提                          拦住
+    - 预算用例 Q21-price-150000 标为 branch，但缺少 precondition（用户已确认的那句话）
+    - test-cases.md 预算表与预算用例不同步，运行 render 重新生成
+
+10 分支用例的基线指向不存在                          拦住
+    - 预算用例 Q22-landing-160000 的 fallback_case 'Q99-not-exist' 不存在
+    - test-cases.md 预算表与预算用例不同步，运行 render 重新生成
+
+11 基线用例被塞进推断出的过滤条件                       拦住
+    - 预算用例 Q18-landing-150000 标为 open，却带了过滤条件 {'require_lidar': True}：原题没写的硬条件不得由模型补上，应改标 branch 并写 precondition
+    - 用例 Q18-landing-150000 合格集合不符：算得 ['c10-290-lidar', 'c10-660-lidar']，预期 ['c10-290-lidar', 'c10-290-zx', 'c10-660-lidar', 'c10-660-zx']
+    - 用例 Q18-landing-150000 的边界反例 c11-640-zx 不在该用例范围内
+
+12 分期算例表手改（当天＝含定金）                       拦住
+    - purchase-cost.md 分期算例与 cashflow() 输出不同步，运行 render 重新生成
+
+结论：12/12 个反例被拦下
+RESULT: PASS
+```
+
+判读：12/12 全部拦下，且逐条打印了拦截理由（不是只看退出码）。**第 12 例的方法学变化**：分期算例表的拦截点在 `cmd_check` 的视图同步校验里，不在 `validate_*` 里；v0.5.2 的复现脚本只调 `validate_*`，会把这一例误报成"未拦住"。本版脚本改为同时看 `cmd_check` 退出码与 `FAIL` 行。
+
+---
+
+## 5. 三包构建与外层校验
+
+源码结构检查（profile=standard）：
+
+```
+$ python publish.py check source/leapmotor-car-expert --profile standard
+{
+  "name": "leapmotor-car-expert",
+  "version": "0.5.3",
+  "profile": "standard",
+  "files": 22,
+  "entry": "SKILL.md",
+  "static_validation": "passed",
+  "runtime_test": "not_run",
+  "target_import": "not_verified",
+  "target_invocation": "not_verified",
+  "marketplace_publication": "not_submitted",
+  "limits": [
+    "Inline Markdown links only",
+    "No dynamic-path or runtime execution check",
+    "Secret pattern scan is not a comprehensive audit",
+    "Target platform acceptance not proven"
+  ]
+}
+```
+
+包哈希（`sha256sum -c SHA256SUMS.txt`，共 24 个包：21 个历史包 + 3 个 v0.5.3 包）：
+
+```
+$ sha256sum -c SHA256SUMS.txt
+packages/leapmotor-car-expert.zip: OK
+packages/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/leapmotor-car-expert-workbuddy.zip: OK
+packages/v0.2.0/leapmotor-car-expert.zip: OK
+packages/v0.2.0/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/v0.2.0/leapmotor-car-expert-workbuddy.zip: OK
+packages/v0.3.0/leapmotor-car-expert.zip: OK
+packages/v0.3.0/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/v0.3.0/leapmotor-car-expert-workbuddy.zip: OK
+packages/v0.4.0/leapmotor-car-expert.zip: OK
+packages/v0.4.0/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/v0.4.0/leapmotor-car-expert-workbuddy.zip: OK
+packages/v0.5.0/leapmotor-car-expert.zip: OK
+packages/v0.5.0/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/v0.5.0/leapmotor-car-expert-workbuddy.zip: OK
+packages/v0.5.1/leapmotor-car-expert.zip: OK
+packages/v0.5.1/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/v0.5.1/leapmotor-car-expert-workbuddy.zip: OK
+packages/v0.5.2/leapmotor-car-expert.zip: OK
+packages/v0.5.2/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/v0.5.2/leapmotor-car-expert-workbuddy.zip: OK
+packages/v0.5.3/leapmotor-car-expert.zip: OK
+packages/v0.5.3/leapmotor-car-expert-workbuddy-skill.zip: OK
+packages/v0.5.3/leapmotor-car-expert-workbuddy.zip: OK
+```
+
+三包结构复核（独立脚本 `zipfile.testzip()` 与逐字节 SHA256 比对）：
+
+| 包 | 字节 | 条目 | testzip | 与源码一致 | 可疑条目 | SHA256 |
+|---|---:|---:|---|---:|---:|---|
+| `leapmotor-car-expert.zip` | 104,398 | 22 | None（无损坏） | 22/22 | 0 | `cd68532c576e41002e5149799059c72614d2968f4627f4c33d7b6c8b3e55e8d9` |
+| `leapmotor-car-expert-workbuddy-skill.zip` | 104,761 | 22 | None | 21/22 | 0 | `7342fe37ab754ca548471a8f8b252762c0d797c0f7ed1335e444f8c8cbf9fef3` |
+| `leapmotor-car-expert-workbuddy.zip` | 126,697 | 26 | None | 22/22 | 0 | `225281bc62417cc6fbc7a3ab9abf4a6d5e9d4c91597b42fd5c6fed6223a46eb6` |
+
+技能包 `21/22` 的差异**只在 frontmatter**：注入 `display_name`／`display_name_en`／`description_zh`／`description_en`／`version`／`author`，`description` 折行，`version: "0.5.3"` 规范化为 `version: 0.5.3`。统一 diff 只有一个 hunk，位于文件头部 `@@ -2,7`；**去掉 frontmatter 后正文逐行相同**（脚本比对返回 True）。
+
+---
+
+## 6. 本轮明确没有做的事
+
+- 没有在 WorkBuddy 客户端导入任何包，没有召唤专家，**客户端实测 0 题**。
+- 没有发布任何"通过率""完整通过率""答对率"。
+- 25 条事实的非开发者独立复核未执行。
+- 没有推送 Git、没有打 tag、没有发布 Release、没有提交市场审核。

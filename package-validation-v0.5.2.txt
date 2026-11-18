@@ -1,0 +1,62 @@
+零跑汽车专家 v0.5.2｜构建与结构检查记录
+日期：2026-11-11
+
+## 已生成 ZIP（位于 packages/v0.5.2/）
+
+- leapmotor-car-expert.zip — 101,786 bytes — SHA256 ec937506ffe95caef6d022d33507e46ce4f37d7552c66c92cab0d9127e4543d1
+- leapmotor-car-expert-workbuddy-skill.zip — 102,151 bytes — SHA256 84dc680c4c4315b4c545d9044a8369ebee25624c2cd1642dca857f4ce0e0ced3
+- leapmotor-car-expert-workbuddy.zip — 124,087 bytes — SHA256 81dd4a3f0a2303a72fce0d5cb47a3d38a88f0ff741c00754928ba294f4aa25bc
+
+版本号变化：源码与三包均为 **0.5.2**（`SKILL.md` 的 `metadata.version`、`expert-config.json`、`workbuddy-market.json`、`fact-records.json`、`sources.json`、`budget-cases.json`、技能 `README.md` 标题、`model-index.md` 标题，共 8 处）。包内已用脚本扫描 `0.5.x` 版本串，**无残留 0.5.0／0.5.1**。
+
+**v0.5.1 三包已作废。** 原因：本轮按复核意见修改了包内正文（`purchase-cost.md` 第三四节、`budget-cases.json`、`SKILL.md`、`ownership-and-order.md`、`buyer-intake.md`、`answer-patterns.md`），包内容已不是 v0.5.1 那三个产物。v0.5.1 的哈希仍留在 `SHA256SUMS.txt` 里，只用于识别旧产物，不得用于测试或分发。
+
+## 构建过程（含两次失败与一轮重建，如实记录）
+
+1. `publish.py check source/leapmotor-car-expert --profile standard` → `static_validation=passed`，22 文件，`version=0.5.2`。
+2. 首轮三包构建成功（标准 101,896 B／技能 102,245 B／专家 124,197 B）。
+3. **发现换行符问题**：本轮部分文件由 Python `write_text` 写入，在 Windows 上被写成 CRLF，与仓库其余文件的 LF 混在一起。`SHA256SUMS.txt` 因此被 `sha256sum -c` 判成"文件不存在"（报错里能看到 `'\r'`）。
+   - 处置：把仓库内 `*.md/*.json/*.py/*.txt` 统一转回 LF（共 23 个文件）；`facts.py` 的 `write_views` 本来就带 `newline="\n"`，未受影响。
+   - 因为源码字节变了，**首轮三包全部作废并以 `--force` 重建**。首轮哈希：标准 `21be1ad9…610a`、技能 `4c4bfc56…b00f`、专家 `de3979ad…e190`，已覆盖、不保留。
+4. 重建第二轮：标准包、技能包成功；**专家包首次失败**，报 `[WinError 32] 另一个程序正在使用此文件… .package-ps3czdys.zip -> leapmotor-car-expert-workbuddy.zip`（临时文件被占用，疑为杀软实时扫描）。等待 2 秒后重试同一命令，成功。上列哈希为**最终产物**。
+5. 未出现 `Output report already exists`（本轮所有调用均带 `--force`）。
+
+## 检查结果
+
+| 阶段 | 结果 |
+|---|---|
+| 源码结构检查（profile=standard） | `static_validation=passed`，22 文件，入口 `SKILL.md`，`version=0.5.2` |
+| ZIP 回查（生成时读取产物再校验） | 三包均 `zip_readback=passed` |
+| ZIP 完整性（独立 `testzip()`） | 三包均返回 `None`（无损坏条目） |
+| 条目数 | 标准包 22、技能包 22、专家包 26 |
+| 内嵌文件一致性（逐字节 SHA256） | 标准包 **22/22** 与源码一致；专家包 `skills/leapmotor-car-expert/` **22/22** 一致；技能包 **21/22** 一致 |
+| 技能包 `SKILL.md` 差异 | 预期内，仅 frontmatter：注入 `display_name`／`display_name_en`／`description_zh`／`description_en`／`version`／`author`，`description` 折行，`version: "0.5.2"` 规范化为 `version: 0.5.2`。统一 diff 三个 hunk 全在文件头部 `@@ -2,7`；**去掉 frontmatter 后正文完全一致**（脚本比对返回 True） |
+| 可疑条目扫描 | 三包均无绝对路径条目、无 `..`、无 `.workbuddy`、无嵌套 ZIP、无 `__MACOSX`、无 `.tmp`／`.log` |
+| 包内版本串 | 脚本扫描全部 `.md`／`.json`，**无 0.5.0／0.5.1 残留** |
+| SHA256 一致性 | `sha256sum -c SHA256SUMS.txt` → **21 个包全部 OK**（18 个历史包 + 3 个 v0.5.2 包），无失败行 |
+| 历史包完整性 | v0.1.0（顶层 3 包）、v0.2.0、v0.3.0、v0.4.0、v0.5.0、v0.5.1 共 18 个旧包逐一复算，全部未变、未被覆盖 |
+| 事实记录校验 | `python scripts/facts.py check` → PASS（261 条记录／17 版本／3 组冲突／**16 个预算用例**，三个生成视图均为最新） |
+| 检查器自测 | `python scripts/facts.py selftest` → PASS（**23 行 = 21 个错误注入 + 基线 + 合法更新**） |
+| 确定性断言 | `python scripts/facts.py atest` → PASS（**62 条断言，0 失败**） |
+| 绕过反例复现 | `python docs/evidence/reproduce-v0.5.2-checker.py` → **11/11 拦下**，逐条打印拦截理由 |
+| 源码与包同步 | `find source/leapmotor-car-expert -newer packages/v0.5.2/leapmotor-car-expert.zip` 返回空 |
+
+## 包内资料规模
+
+- 18 个 references（本轮未增删文件）
+- `fact-records.json` 261 条记录、17 个版本（C10 4／C11 5／C16 8）、3 组冲突
+- `sources.json` 46 条来源，`read_status`：full-text 5／partial 40／blocked 1
+- `budget-cases.json` **16 个用例**：`open` 10（含 Q22 两条新基线）／`stated` 2（Q19 六座）／`branch` 4（Q21、Q22 各两口径）
+- 头像 `avatar.png` 12,610 bytes，SHA256 `bb81fb1d…38d72e`（与 v0.5.1 相同）
+
+## 未验证（不得表述为已通过）
+
+- 未在 WorkBuddy 客户端导入任何包，未召唤专家，未做真实调用。
+- **客户端实测 0 题**：`tests/client-test-checklist-v0.5.2.md` 的首批 8 题 + 本轮第 9／10 题，以及全量 8 功能＋8 安全＋3 多轮＋2 注入，均未执行。`tests/answer-samples-v0.5.2.md` 的 14 例是示范答案，不是实测记录。
+- **不发布任何通过率。**
+- 需求完成度未评估。
+- 25 个关键事实的非开发者独立复核仍未执行（`tests/independent-review-worksheet-v0.4.0.md`）。
+- 分期现金流三笔账、Q21／Q22 的问诊是否做到，**程序判不了**，只能靠客户端实测与人工审查。
+- 包内不含可执行脚本：`scripts/facts.py` 不在包内，购置税四步算式与手算流程写在 `SKILL.md` 第四步第 4 条，属提示而非程序保障。
+- 未提交市场审核，未推送 Git，未创建 tag，未发布 Release。
+- 头像仅按字节数与尺寸检查，未做人工视觉复核。

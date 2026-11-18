@@ -1,0 +1,49 @@
+零跑汽车专家 v0.5.0｜构建与结构检查记录
+日期：2026-11-11
+
+## 已生成 ZIP（位于 packages/v0.5.0/）
+
+- leapmotor-car-expert.zip — 87,643 bytes — SHA256 2d7c27d23a094a073a876d4a71caeae2ac3b6c9192e44593f6492cfe9d14e07a
+- leapmotor-car-expert-workbuddy-skill.zip — 88,001 bytes — SHA256 0f5755918eba3b91f113542f440a2ce80f287516b8774be0f86bae0dbc76f8c6
+- leapmotor-car-expert-workbuddy.zip — 109,887 bytes — SHA256 f2d159561b00233dea6fb7f5cd70ad14a5747309573aa8566b9201bb4a705a65
+
+## 构建过程（如实记录，含两次重来）
+
+1. 第一次构建前先改两份元数据：`workbuddy-market.json` 的 `description_zh`、`expert-config.json` 的 `displayDescription.zh` 加入"质保与订车条款"。专家包首建失败：`Chinese card description must have 40..50 characters`——改写后的中文描述超长。改回 44 字（`查零跑车型与配置，比较版本差异，按预算整理候选，估算含税落地成本，并说明质保与订车条款。`）后通过。
+2. 三包首次全部生成后，发现三处文档仍有旧计数（`model-index.md` 的"来源共 38 条"、根 README 与技能 README 的 `read_status` 分布、`model-c10.md` 只写"配置库列四年或 12 万"而未反映 C10 告知书缺失），并补写 `model-c11.md` 的质保时效与过户缺口。这些文件都在包内，**因此三包以 `--force` 全部重建**。
+3. 上列哈希为**最终产物**（只保留最后一次的产物，前一次的包已覆盖，不再保留）。
+
+## 检查结果
+
+| 阶段 | 结果 |
+|---|---|
+| 源码结构检查（profile=standard） | static_validation=passed，21 文件，入口 SKILL.md，version 0.5.0 |
+| ZIP 回查（生成时读取产物再校验） | 三包 zip_readback=passed |
+| 成品 ZIP 独立复检 | standard 21 文件、workbuddy 21 文件，均 static_validation=passed、version 0.5.0 |
+| 专家包结构 | 25 个条目：`.codebuddy-plugin/plugin.json`、`README.md`、`agents/leapmotor-car-expert-workbuddy.md`、`avatars/expert.png`、`skills/leapmotor-car-expert/`（21 文件）。`publish.py check` 对专家包报 `SKILL.md must be at the package root`，这是因为 `check` 只认平铺式技能包；专家包为嵌套结构，改用条目清点 + 逐字节比对验收，与 v0.4.0 处理一致 |
+| 内嵌文件一致性（逐字节 SHA256） | standard 21/21 一致；专家包 `skills/` 下 21/21 一致；workbuddy 技能包 20/21 一致 |
+| workbuddy 技能包 SKILL.md 差异 | 预期内：仅 frontmatter 3 个差异块（注入 display_name／display_name_en／description_zh／description_en／version／author，并对长 description 折行；`version: "0.5.0"` 规范化为 `version: 0.5.0`）。首个正文差异起始行：无（正文未改） |
+| 可疑条目扫描 | 三包均无 `.workbuddy`、无嵌套 ZIP、无 `__MACOSX`、无 `.tmp/.log`、无绝对路径开头条目 |
+| 包内 README 版本 | 技能 README 标题已核对为 0.5.0 |
+| SHA256 一致性 | 与 SHA256SUMS.txt v0.5.0 段一致；`sha256sum -c` 15 个包全部 OK，无非 OK 行、无 CRLF 告警（清单以 LF 写入） |
+| 历史包完整性 | v0.1.0 三包、v0.2.0 三包、v0.3.0 三包、v0.4.0 三包共 12 个哈希逐一重算，全部未变、未覆盖 |
+| 事实记录校验 | `python scripts/facts.py check` → PASS（261 条记录、17 个版本、3 组冲突、两个生成视图均为最新） |
+| 检查器自测 | `python scripts/facts.py selftest` → PASS（基线 0、8 类注入错误全部非 0、合法改后重渲染 0） |
+| 确定性反例断言 | `python scripts/facts.py atest` → PASS（A01–A06、A10） |
+
+专家显示名：中文 6 字符（零跑汽车专家）、英文 15 字符（Leapmotor Guide）。
+
+## 包内资料规模
+
+- 17 个 references（含 `fact-records.json` 261 条记录、`sources.json` 46 条来源）
+- `read_status` 分布：full-text 5／partial 40／blocked 1
+- 版本：C10 2027 款 4 版、C11 2027 款 5 版、C16 2027 款 8 版
+
+## 未验证（不得表述为已通过）
+
+- 未在 WorkBuddy 客户端导入技能包或专家包，未召唤专家。
+- 未执行客户端实测：8 功能 + 8 安全 + 3 多轮 + 2 检索内容注入（清单见 `tests/client-test-checklist-v0.5.0.md`）；四模块 14 例回答样例（`tests/answer-samples-v0.5.0.md`）同样未跑。
+- **不发布任何通过率**：v0.4.0 的 80/80 与 84.6% 已撤回，v0.5.0 未产生新数字。
+- 25 个关键事实的非开发者独立复核未执行（表格见 `tests/independent-review-worksheet-v0.4.0.md`）。
+- 未提交市场审核，未推送 Git，未创建 tag，未发布 Release。
+- 头像仅按 PNG 尺寸与体积检查，未做人工视觉复核。

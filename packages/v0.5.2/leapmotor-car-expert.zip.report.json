@@ -1,0 +1,22 @@
+{
+  "name": "leapmotor-car-expert",
+  "version": "0.5.2",
+  "profile": "standard",
+  "files": 22,
+  "entry": "SKILL.md",
+  "static_validation": "passed",
+  "runtime_test": "not_run",
+  "target_import": "not_verified",
+  "target_invocation": "not_verified",
+  "marketplace_publication": "not_submitted",
+  "limits": [
+    "Inline Markdown links only",
+    "No dynamic-path or runtime execution check",
+    "Secret pattern scan is not a comprehensive audit",
+    "Target platform acceptance not proven"
+  ],
+  "sha256": "ec937506ffe95caef6d022d33507e46ce4f37d7552c66c92cab0d9127e4543d1",
+  "bytes": 101786,
+  "zip": "leapmotor-car-expert.zip",
+  "zip_readback": "passed"
+}
